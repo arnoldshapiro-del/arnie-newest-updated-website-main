@@ -15,6 +15,7 @@ import {
   Phone,
   Video
 } from "lucide-react";
+import BackButton from "@/components/BackButton";
 
 const Services = () => {
   const services = [
@@ -91,6 +92,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <BackButton />
       {/* Header */}
       <div className="bg-gradient-to-r from-primary/10 to-secondary/10 py-16">
         <div className="container max-w-4xl mx-auto px-4 text-center">

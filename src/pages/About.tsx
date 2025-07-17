@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Clock, Heart } from "lucide-react";
 import doctorProfile from "@/assets/doctor-profile.jpg";
+import BackButton from "@/components/BackButton";
 
 const About = () => {
   const achievements = [
@@ -14,6 +15,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <BackButton />
       {/* Header */}
       <div className="bg-gradient-to-r from-primary/10 to-secondary/10 py-16">
         <div className="container max-w-4xl mx-auto px-4 text-center">
