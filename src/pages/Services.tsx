@@ -195,9 +195,9 @@ const Services = () => {
               Our crisis intervention team provides 24/7 support.
             </p>
             <div className="space-y-2">
-              <Button variant="destructive" size="lg">
-                Call Crisis Line: (555) 123-4567
-              </Button>
+            <Button variant="destructive" size="lg">
+              Call Crisis Line: 911 or 988
+            </Button>
               <p className="text-sm text-muted-foreground">
                 For immediate danger, call 911 or go to your nearest emergency room
               </p>

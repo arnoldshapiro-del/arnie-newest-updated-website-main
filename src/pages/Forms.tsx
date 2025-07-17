@@ -176,7 +176,7 @@ const Forms = () => {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-blue-500" />
-                    Email to: forms@mindwellclinic.com
+                    Email to: contact@arnoldshapiromd.com
                   </li>
                   <li className="flex items-center gap-2">
                     <Upload className="h-4 w-4 text-blue-500" />
@@ -346,10 +346,10 @@ const Forms = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button>
-                Call (555) 123-4567
+                Call (513) 794-8777 or (859) 341-7453
               </Button>
               <Button variant="outline">
-                Email forms@mindwellclinic.com
+                Email contact@arnoldshapiromd.com
               </Button>
             </div>
           </CardContent>

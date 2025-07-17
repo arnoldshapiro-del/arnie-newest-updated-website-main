@@ -196,7 +196,7 @@ const PatientPortal = () => {
                     </Button>
                     <Button variant="ghost" size="sm" className="w-full justify-start">
                       <Phone className="h-4 w-4 mr-2" />
-                      Crisis Support: (555) 911-HELP
+                      Crisis Support: Call 911 or 988
                     </Button>
                   </div>
                 </div>
@@ -281,7 +281,7 @@ const PatientPortal = () => {
                 <p className="text-sm text-muted-foreground mb-2">
                   Technical support available during business hours
                 </p>
-                <p className="font-medium">(555) 123-4567</p>
+                <p className="font-medium">(513) 794-8777 or (859) 341-7453</p>
               </div>
               <div>
                 <Mail className="h-8 w-8 mx-auto mb-3 text-primary" />
@@ -289,7 +289,7 @@ const PatientPortal = () => {
                 <p className="text-sm text-muted-foreground mb-2">
                   Send us your questions anytime
                 </p>
-                <p className="font-medium">support@mindwellclinic.com</p>
+                <p className="font-medium">contact@arnoldshapiromd.com</p>
               </div>
               <div>
                 <Clock className="h-8 w-8 mx-auto mb-3 text-primary" />

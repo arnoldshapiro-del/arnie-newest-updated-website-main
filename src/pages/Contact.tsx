@@ -54,24 +54,24 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Phone",
-      primary: "(555) 123-4567",
-      secondary: "Crisis Line: (555) 911-HELP",
-      description: "Call during business hours or 24/7 crisis line"
+      title: "Cincinnati Office",
+      primary: "(513) 794-8777",
+      secondary: "8280 Montgomery Road, Suite 304",
+      description: "Cincinnati, OH 45236"
+    },
+    {
+      icon: Phone,
+      title: "Fort Wright Office",
+      primary: "(859) 341-7453",
+      secondary: "1717 Dixie Highway, Suite 200",
+      description: "Fort Wright, KY 41011"
     },
     {
       icon: Mail,
       title: "Email",
-      primary: "info@mindwellclinic.com",
-      secondary: "urgent@mindwellclinic.com",
-      description: "General inquiries or urgent matters"
-    },
-    {
-      icon: MapPin,
-      title: "Address",
-      primary: "123 Wellness Drive",
-      secondary: "Suite 200, City, ST 12345",
-      description: "Easily accessible with parking available"
+      primary: "contact@arnoldshapiromd.com",
+      secondary: "General inquiries and appointments",
+      description: "We respond within 24 hours"
     }
   ];
 
