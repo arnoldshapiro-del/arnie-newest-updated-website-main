@@ -45,25 +45,61 @@ const Header = () => {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a 
+              href="#home" 
+              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Home
             </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a 
+              href="#about" 
+              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               About Dr. Shapiro
             </a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a 
+              href="#services" 
+              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Services
             </a>
-            <a href="#approach" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a 
+              href="#approach" 
+              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Our Approach
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a 
+              href="#contact" 
+              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Contact
             </a>
             <Button 
               variant="default" 
               size="lg"
               className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Schedule Consultation
             </Button>
@@ -82,25 +118,69 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-4 pt-4">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a 
+                href="#home" 
+                className="text-foreground hover:text-primary transition-colors font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Home
               </a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a 
+                href="#about" 
+                className="text-foreground hover:text-primary transition-colors font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 About Dr. Shapiro
               </a>
-              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a 
+                href="#services" 
+                className="text-foreground hover:text-primary transition-colors font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Services
               </a>
-              <a href="#approach" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a 
+                href="#approach" 
+                className="text-foreground hover:text-primary transition-colors font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Our Approach
               </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a 
+                href="#contact" 
+                className="text-foreground hover:text-primary transition-colors font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
+              >
                 Contact
               </a>
               <Button 
                 variant="default" 
                 size="lg"
                 className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium mt-4"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMenuOpen(false);
+                }}
               >
                 Schedule Consultation
               </Button>

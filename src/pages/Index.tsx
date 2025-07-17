@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
+import ApproachSection from "@/components/ApproachSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -10,6 +12,8 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <ApproachSection />
+      <ContactSection />
     </div>
   );
 };
