@@ -287,9 +287,9 @@ const PatientPortal = () => {
                 <Mail className="h-8 w-8 mx-auto mb-3 text-primary" />
                 <h3 className="font-semibold mb-2">Email Support</h3>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Send us your questions anytime
+                  Email provided for reference only - please call for all inquiries
                 </p>
-                <p className="font-medium">contact@arnoldshapiromd.com</p>
+                <p className="font-medium">ashapiro@zoomtown.com</p>
               </div>
               <div>
                 <Clock className="h-8 w-8 mx-auto mb-3 text-primary" />

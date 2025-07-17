@@ -38,7 +38,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Form Submitted",
-      description: "Thank you for contacting us. We'll respond within 24 hours.",
+      description: "Thank you for your information. Please call our office to schedule your consultation.",
     });
     setFormData({
       name: '',
@@ -68,10 +68,10 @@ const Contact = () => {
     },
     {
       icon: Mail,
-      title: "Email",
-      primary: "contact@arnoldshapiromd.com",
-      secondary: "General inquiries and appointments",
-      description: "We respond within 24 hours"
+      title: "Please Call - Email Not Monitored",
+      primary: "ashapiro@zoomtown.com",
+      secondary: "Email provided for reference only",
+      description: "For all questions, concerns, and requests please call our office"
     }
   ];
 
@@ -190,8 +190,7 @@ const Contact = () => {
                           <SelectValue placeholder="How should we contact you?" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="phone">Phone Call</SelectItem>
-                          <SelectItem value="email">Email</SelectItem>
+                          <SelectItem value="phone">Phone Call (Preferred)</SelectItem>
                           <SelectItem value="text">Text Message</SelectItem>
                         </SelectContent>
                       </Select>

@@ -176,7 +176,7 @@ const Forms = () => {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-blue-500" />
-                    Email to: contact@arnoldshapiromd.com
+                    Email: ashapiro@zoomtown.com (reference only - please call)
                   </li>
                   <li className="flex items-center gap-2">
                     <Upload className="h-4 w-4 text-blue-500" />
@@ -348,8 +348,8 @@ const Forms = () => {
               <Button>
                 Call (513) 794-8777 or (859) 341-7453
               </Button>
-              <Button variant="outline">
-                Email contact@arnoldshapiromd.com
+              <Button variant="outline" disabled>
+                Email Not Monitored - Please Call
               </Button>
             </div>
           </CardContent>

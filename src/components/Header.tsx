@@ -18,9 +18,9 @@ const Header = () => {
                 <Phone size={14} />
                 <span>(859) 341-7453</span>
               </a>
-              <a href="mailto:contact@arnoldshapiromd.com" className="flex items-center space-x-2 hover:text-primary-glow transition-colors">
+              <a href="mailto:ashapiro@zoomtown.com" className="flex items-center space-x-2 hover:text-primary-glow transition-colors">
                 <Mail size={14} />
-                <span>contact@arnoldshapiromd.com</span>
+                <span>ashapiro@zoomtown.com</span>
               </a>
             </div>
             <div className="flex items-center space-x-2 text-xs">
@@ -40,7 +40,7 @@ const Header = () => {
               <span className="text-primary-foreground font-bold text-lg">AS</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-foreground">Arnold G. Shapiro, MD</h1>
+              <h1 className="text-2xl font-bold text-foreground">Arnold G. Shapiro MD</h1>
               <p className="text-sm text-muted-foreground">Psychiatric Practice</p>
             </div>
           </Link>
