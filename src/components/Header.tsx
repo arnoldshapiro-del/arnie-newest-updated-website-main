@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Menu } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="bg-card shadow-soft sticky top-0 z-50">
@@ -33,7 +35,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">AS</span>
             </div>
@@ -41,67 +43,59 @@ const Header = () => {
               <h1 className="text-2xl font-bold text-foreground">Arnold G. Shapiro, MD</h1>
               <p className="text-sm text-muted-foreground">Psychiatric Practice</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#home" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+            <Link 
+              to="/" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Home
-            </a>
-            <a 
-              href="#about" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+            </Link>
+            <Link 
+              to="/about" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/about' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               About Dr. Shapiro
-            </a>
-            <a 
-              href="#services" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+            </Link>
+            <Link 
+              to="/services" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/services' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Services
-            </a>
-            <a 
-              href="#approach" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+            </Link>
+            <Link 
+              to="/disorders" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/disorders' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
-              Our Approach
-            </a>
-            <a 
-              href="#contact" 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              Disorders
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/contact' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Contact
-            </a>
+            </Link>
+            <Link 
+              to="/forms" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/forms' ? 'text-primary border-b-2 border-primary' : ''}`}
+            >
+              Forms
+            </Link>
+            <Link 
+              to="/patient-portal" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/patient-portal' ? 'text-primary border-b-2 border-primary' : ''}`}
+            >
+              Patient Portal
+            </Link>
             <Button 
               variant="default" 
               size="lg"
               className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              asChild
             >
-              Schedule Consultation
+              <Link to="/contact">Schedule Consultation</Link>
             </Button>
           </div>
 
@@ -118,71 +112,62 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-4 pt-4">
-              <a 
-                href="#home" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+              <Link 
+                to="/" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+              </Link>
+              <Link 
+                to="/about" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/about' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 About Dr. Shapiro
-              </a>
-              <a 
-                href="#services" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+              </Link>
+              <Link 
+                to="/services" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/services' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Services
-              </a>
-              <a 
-                href="#approach" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+              </Link>
+              <Link 
+                to="/disorders" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/disorders' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
-                Our Approach
-              </a>
-              <a 
-                href="#contact" 
-                className="text-foreground hover:text-primary transition-colors font-medium"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+                Disorders
+              </Link>
+              <Link 
+                to="/contact" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/contact' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
+              <Link 
+                to="/forms" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/forms' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Forms
+              </Link>
+              <Link 
+                to="/patient-portal" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/patient-portal' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Patient Portal
+              </Link>
               <Button 
                 variant="default" 
                 size="lg"
                 className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium mt-4"
-                onClick={() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsMenuOpen(false);
-                }}
+                asChild
               >
-                Schedule Consultation
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Schedule Consultation</Link>
               </Button>
             </div>
           </div>

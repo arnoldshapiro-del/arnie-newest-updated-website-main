@@ -59,35 +59,40 @@ const Forms = () => {
       description: "Nine-question assessment to screen for depression symptoms.",
       duration: "3-5 minutes",
       required: false,
-      category: "Depression"
+      category: "Depression",
+      downloadLink: "#"
     },
     {
       title: "Anxiety Screening (GAD-7)",
       description: "Seven-question assessment for generalized anxiety disorder.",
       duration: "3-5 minutes",
       required: false,
-      category: "Anxiety"
+      category: "Anxiety",
+      downloadLink: "#"
     },
     {
       title: "ADHD Self-Report Scale",
       description: "Comprehensive assessment for adult ADHD symptoms.",
       duration: "10-15 minutes",
       required: false,
-      category: "ADHD"
+      category: "ADHD",
+      downloadLink: "#"
     },
     {
       title: "Mood Disorder Questionnaire",
       description: "Screening tool for bipolar disorder and mood episodes.",
       duration: "5-10 minutes",
       required: false,
-      category: "Mood"
+      category: "Mood",
+      downloadLink: "#"
     },
     {
       title: "PTSD Checklist (PCL-5)",
       description: "Assessment for post-traumatic stress disorder symptoms.",
       duration: "5-10 minutes",
       required: false,
-      category: "Trauma"
+      category: "Trauma",
+      downloadLink: "#"
     }
   ];
 
@@ -95,22 +100,26 @@ const Forms = () => {
     {
       title: "Child/Adolescent Intake",
       description: "Specialized intake form for patients under 18 years old.",
-      notes: "Parent/guardian signature required"
+      notes: "Parent/guardian signature required",
+      downloadLink: "#"
     },
     {
       title: "Couples Therapy Assessment",
       description: "Relationship history and goals for couples counseling.",
-      notes: "Both partners must complete"
+      notes: "Both partners must complete",
+      downloadLink: "#"
     },
     {
       title: "Medication Management Form",
       description: "Current medications, side effects, and treatment response.",
-      notes: "Bring current medication bottles"
+      notes: "Bring current medication bottles",
+      downloadLink: "#"
     },
     {
       title: "Crisis Safety Plan",
       description: "Personalized plan for managing mental health crises.",
-      notes: "Completed during appointment"
+      notes: "Completed during appointment",
+      downloadLink: "#"
     }
   ];
 
@@ -209,12 +218,16 @@ const Forms = () => {
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{form.description}</p>
                   <div className="flex gap-2">
-                    <Button size="sm" className="flex-1">
-                      <Download className="h-4 w-4 mr-2" />
-                      Download PDF
+                    <Button size="sm" className="flex-1" asChild>
+                      <a href={form.downloadLink} download={`${form.title.replace(/\s+/g, '_')}.pdf`}>
+                        <Download className="h-4 w-4 mr-2" />
+                        Download PDF
+                      </a>
                     </Button>
-                    <Button size="sm" variant="outline">
-                      <FileText className="h-4 w-4" />
+                    <Button size="sm" variant="outline" asChild>
+                      <a href={form.downloadLink} target="_blank" rel="noopener noreferrer">
+                        <FileText className="h-4 w-4" />
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
@@ -243,9 +256,11 @@ const Forms = () => {
                   </div>
                   <h3 className="font-bold mb-2">{form.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{form.description}</p>
-                  <Button size="sm" variant="outline" className="w-full">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download
+                  <Button size="sm" variant="outline" className="w-full" asChild>
+                    <a href={form.downloadLink} download={`${form.title.replace(/\s+/g, '_')}.pdf`}>
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -265,9 +280,11 @@ const Forms = () => {
                   <p className="text-sm text-amber-600 bg-amber-50 p-2 rounded mb-4">
                     <strong>Note:</strong> {form.notes}
                   </p>
-                  <Button size="sm" variant="outline">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download
+                  <Button size="sm" variant="outline" asChild>
+                    <a href={form.downloadLink} download={`${form.title.replace(/\s+/g, '_')}.pdf`}>
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
