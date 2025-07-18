@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Award, Heart, Users } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import doctorProfileImage from "@/assets/doctor-profile-new.jpg";
 
 const HeroSection = () => {
   return (
@@ -107,8 +107,8 @@ const HeroSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-large">
               <img 
-                src={heroImage} 
-                alt="Professional psychiatric office with calming environment" 
+                src={doctorProfileImage} 
+                alt="Dr. Arnold G. Shapiro, Board-Certified Psychiatrist" 
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
