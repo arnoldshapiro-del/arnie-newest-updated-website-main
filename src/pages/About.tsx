@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Clock, Heart } from "lucide-react";
-import doctorProfile from "@/assets/doctor-profile.jpg";
+import doctorProfile from "@/assets/doctor-profile-new.jpg";
 import BackButton from "@/components/BackButton";
 
 const About = () => {

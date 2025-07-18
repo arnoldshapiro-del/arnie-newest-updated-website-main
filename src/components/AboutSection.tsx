@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Award, Heart, Users, BookOpen, Clock } from "lucide-react";
-import doctorProfile from "@/assets/doctor-profile.jpg";
+import doctorProfile from "@/assets/doctor-profile-new.jpg";
 
 const AboutSection = () => {
   return (
