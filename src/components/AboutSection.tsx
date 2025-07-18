@@ -45,7 +45,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4 pt-8">
               <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">40+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">35+</div>
                   <div className="text-sm text-foreground">Years of Experience</div>
                 </CardContent>
               </Card>
@@ -66,11 +66,11 @@ const AboutSection = () => {
                 Meet Dr. Shapiro
               </Badge>
               <h2 className="text-4xl font-bold text-foreground">
-                Four Decades of 
+                Three and a Half Decades of 
                 <span className="text-primary"> Compassionate Care</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Dr. Arnold Shapiro has dedicated over 40 years to helping thousands of patients 
+                Dr. Arnold Shapiro has dedicated over 35 years to helping thousands of patients 
                 overcome life's biggest challenges. His philosophy: treat every patient like family, 
                 listen deeply, collaborate every step, and empower you with choices.
               </p>

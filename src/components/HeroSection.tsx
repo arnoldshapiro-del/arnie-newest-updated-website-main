@@ -14,7 +14,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary" className="bg-trust/10 text-trust border-trust/20">
                 <Award className="w-4 h-4 mr-1" />
-                40+ Years Experience
+                35+ Years Experience
               </Badge>
               <Badge variant="secondary" className="bg-healing/10 text-healing border-healing/20">
                 <Users className="w-4 h-4 mr-1" />
@@ -29,7 +29,7 @@ const HeroSection = () => {
                 <span className="text-primary"> With Compassion</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Over 40 years of successful, caring treatment in Cincinnati and Fort Wright. 
+                Over 35 years of successful, caring treatment in Cincinnati and Fort Wright. 
                 Every patient is treated with equal respect, warmth, and understanding. 
                 We collaborate—exploring all options and deciding together on the best treatment plan.
               </p>
@@ -103,21 +103,12 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right column - Image */}
+          {/* Right column - Floating stats only */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-large">
-              <img 
-                src={doctorProfileImage} 
-                alt="Dr. Arnold G. Shapiro, Board-Certified Psychiatrist" 
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-            </div>
-            
             {/* Floating stats */}
             <div className="absolute -bottom-8 -left-8 bg-card rounded-lg p-6 shadow-large border border-border">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">40+</div>
+                <div className="text-3xl font-bold text-primary">35+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
             </div>
