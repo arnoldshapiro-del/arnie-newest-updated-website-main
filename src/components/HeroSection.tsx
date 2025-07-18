@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Award, Heart, Users } from "lucide-react";
-import doctorProfileImage from "@/assets/doctor-profile-new.jpg";
+import happyFamilyImage from "@/assets/happy-family.jpg";
 
 const HeroSection = () => {
   return (
@@ -18,7 +18,7 @@ const HeroSection = () => {
               </Badge>
               <Badge variant="secondary" className="bg-healing/10 text-healing border-healing/20">
                 <Users className="w-4 h-4 mr-1" />
-                Thousands of Patients Helped
+                8000 + Patients Helped
               </Badge>
             </div>
 
@@ -103,21 +103,14 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right column - Floating stats only */}
-          <div className="relative">
-            {/* Floating stats */}
-            <div className="absolute -bottom-8 -left-8 bg-card rounded-lg p-6 shadow-large border border-border">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">35+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-            </div>
-            
-            <div className="absolute -top-8 -right-8 bg-card rounded-lg p-6 shadow-large border border-border">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-healing">1000s</div>
-                <div className="text-sm text-muted-foreground">Patients Helped</div>
-              </div>
+          {/* Right column - Family Image */}
+          <div className="relative flex items-center justify-center">
+            <div className="rounded-2xl overflow-hidden shadow-large">
+              <img 
+                src={happyFamilyImage} 
+                alt="Happy loving family" 
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
