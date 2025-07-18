@@ -51,8 +51,8 @@ const AboutSection = () => {
               </Card>
               <Card className="bg-gradient-to-br from-healing/5 to-healing/10 border-healing/20">
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-healing mb-2">1000s</div>
-                  <div className="text-sm text-foreground">Patients Treated</div>
+                  <div className="text-3xl font-bold text-healing mb-2">8000+</div>
+                  <div className="text-sm text-foreground">Patients and Families Helped</div>
                 </CardContent>
               </Card>
             </div>
