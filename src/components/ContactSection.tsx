@@ -26,9 +26,9 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      info: "contact@arnoldshapiromd.com",
+      info: "arnold.shapiro@gmail.com",
       description: "Secure, confidential communication",
-      action: "mailto:contact@arnoldshapiromd.com"
+      action: "mailto:arnold.shapiro@gmail.com"
     },
     {
       icon: MapPin,
@@ -128,20 +128,11 @@ const ContactSection = () => {
             </Card>
 
             {/* Emergency Information */}
-            <Card className="bg-destructive/5 border-destructive/20">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-3">
-                  <AlertCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-2">Emergency Services</h4>
-                    <p className="text-muted-foreground text-sm">
-                      If you're experiencing a psychiatric emergency, call 911 or go to your nearest emergency room. 
-                      For non-emergency concerns, call our office at (859) 341-7453.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="p-6 text-sm text-muted-foreground">
+              <p>
+                For non-emergency concerns, call our office at (859) 341-7453. If you're experiencing a psychiatric emergency, call 911 or go to your nearest emergency room.
+              </p>
+            </div>
           </div>
 
           {/* Right Column - Image and Testimonials */}

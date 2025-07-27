@@ -69,7 +69,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Please Call - Email Not Monitored",
-      primary: "ashapiro@zoomtown.com",
+      primary: "arnold.shapiro@gmail.com",
       secondary: "Email provided for reference only",
       description: "For all questions, concerns, and requests please call our office"
     }
@@ -99,31 +99,11 @@ const Contact = () => {
 
       <div className="container max-w-6xl mx-auto px-4 py-16">
         {/* Emergency Notice */}
-        <Card className="bg-destructive/5 border-destructive/20 mb-12">
-          <CardContent className="p-6">
-            <div className="flex items-start gap-4">
-              <AlertTriangle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-bold text-destructive mb-2">Mental Health Emergency?</h3>
-                <p className="text-sm text-destructive/80 mb-3">
-                  If you're experiencing thoughts of self-harm or having a mental health crisis, 
-                  please seek immediate help.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Button variant="destructive" size="sm">
-                    Call 911
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Crisis Line: 988
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    Text "HELLO" to 741741
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="text-center mb-12 p-6 bg-card rounded-lg">
+          <p className="text-muted-foreground">
+            For non-emergency concerns, call our office at (859) 341-7453. If you're experiencing a psychiatric emergency, call 911 or go to your nearest emergency room.
+          </p>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}

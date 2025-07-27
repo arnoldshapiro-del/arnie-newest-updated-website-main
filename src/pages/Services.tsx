@@ -186,24 +186,11 @@ const Services = () => {
         </Card>
 
         {/* Emergency Services */}
-        <Card className="bg-destructive/5 border-destructive/20 mb-16">
-          <CardContent className="p-8 text-center">
-            <Phone className="h-12 w-12 mx-auto mb-4 text-destructive" />
-            <h2 className="text-2xl font-bold mb-4">Crisis Support Available</h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              If you're experiencing a mental health emergency, immediate help is available. 
-              Our crisis intervention team provides 24/7 support.
-            </p>
-            <div className="space-y-2">
-            <Button variant="destructive" size="lg">
-              Call Crisis Line: 911 or 988
-            </Button>
-              <p className="text-sm text-muted-foreground">
-                For immediate danger, call 911 or go to your nearest emergency room
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="text-center mb-16 p-6 bg-card rounded-lg">
+          <p className="text-muted-foreground">
+            For non-emergency concerns, call our office at (859) 341-7453. If you're experiencing a psychiatric emergency, call 911 or go to your nearest emergency room.
+          </p>
+        </div>
 
         {/* Call to Action */}
         <div className="text-center">
