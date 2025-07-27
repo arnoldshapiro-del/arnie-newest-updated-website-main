@@ -36,6 +36,13 @@ const ContactSection = () => {
       info: "Cincinnati, OH & Fort Wright, KY",
       description: "Two convenient locations to serve you",
       action: "#"
+    },
+    {
+      icon: Star,
+      title: "Psychology Today",
+      info: "View Professional Profile",
+      description: "Read reviews and learn more about our practice",
+      action: "https://www.psychologytoday.com/us/psychiatrists/arnold-g-shapiro-cincinnati-oh/1201880"
     }
   ];
 
@@ -57,6 +64,34 @@ const ContactSection = () => {
     {
       text: "Finally found a psychiatrist who treats me as an equal and explains everything clearly. Highly recommend!",
       author: "Current Patient"
+    },
+    {
+      text: "I have been seeing Dr Shapiro for years and he has helped me MUCH more than previous psychiatrists could.",
+      author: "Long-term Patient"
+    },
+    {
+      text: "Knows more about medicine than any other doctor I have ever met",
+      author: "Impressed Patient"
+    },
+    {
+      text: "He helped my daughter when everyone else had given up. We will be forever grateful",
+      author: "Grateful Parent"
+    },
+    {
+      text: "Dr.Shapiro found a very quick solution to my depression. His expertise and experience was very evident in my diagnosis and prognosis of my condition. Highly recommended.",
+      author: "Recovered Patient"
+    },
+    {
+      text: "I started talking my son to Dr. Shapiro when he was about 10, multiple schools, single mom, felt like a failure, horrible guilt for keeping him apparently I was the worst mother in the world, my son is now 35 no issues w drugs/alcohol, truancy, no unexpected or had to be 'taken care of' babies he just purchased his 1st home completely on his own would not even tell grand parents until after closing and keys were in hand",
+      author: "Proud Mother"
+    },
+    {
+      text: "Dr. Shapiro is PRIVATE and he is ABSOLUTELY POSITIVELY THE BEST TO HAVE ON YOUR SIDE AND HAVE YOUR BACK, you pay for what you get, my son's life was not worth short cutting and being cheap, Dr. Shapiro has the right to pick and chose who he deals with everyone out there has the right to decide where they want to go, but every penny I spent I would have gladly paid twice as much insurance or not this is our doctor for life, I'll eat peanut and crackers before I switch doctors. But I was a young girl getting bullied by a system had no support raising a son on her own. Dr Shapiro changed our world and 30 yrs later still has our back. Options and choices",
+      author: "Devoted Patient"
+    },
+    {
+      text: "Excellent. Would recommend him to anyone.",
+      author: "Satisfied Patient"
     }
   ];
 
@@ -97,6 +132,8 @@ const ContactSection = () => {
                           <a 
                             href={contact.action}
                             className="text-primary font-medium hover:text-primary/80 transition-colors"
+                            target={contact.action.startsWith('http') ? '_blank' : undefined}
+                            rel={contact.action.startsWith('http') ? 'noopener noreferrer' : undefined}
                           >
                             {contact.info}
                           </a>
@@ -128,7 +165,7 @@ const ContactSection = () => {
             </Card>
 
             {/* Emergency Information */}
-            <div className="p-6 text-sm text-muted-foreground">
+            <div className="p-6 text-base text-muted-foreground">
               <p>
                 For non-emergency concerns, call our office at (859) 341-7453. If you're experiencing a psychiatric emergency, call 911 or go to your nearest emergency room.
               </p>
