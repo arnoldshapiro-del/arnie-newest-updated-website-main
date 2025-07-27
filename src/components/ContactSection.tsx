@@ -118,7 +118,7 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Contact us</h3>
               <div className="space-y-6">
                 {contactInfo.map((contact, index) => (
                   <Card key={index} className="bg-card border-border hover:shadow-medium transition-all duration-300">
@@ -231,7 +231,7 @@ const ContactSection = () => {
                   className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium w-full"
                 >
                   <Calendar className="w-4 h-4 mr-2" />
-                  Schedule Evaluation
+                  Schedule Your Evaluation
                 </Button>
               </CardContent>
             </Card>

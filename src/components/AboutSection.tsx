@@ -139,7 +139,7 @@ const AboutSection = () => {
                 size="lg" 
                 className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium"
               >
-                Schedule a Consultation
+                Schedule Your Evaluation
               </Button>
               <Button 
                 variant="outline" 

@@ -89,7 +89,7 @@ const Contact = () => {
       <div className="bg-gradient-to-r from-primary/10 to-secondary/10 py-16">
         <div className="container max-w-4xl mx-auto px-4 text-center">
           <Badge variant="outline" className="mb-4">Contact Us</Badge>
-          <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
+          <h1 className="text-4xl font-bold mb-6">Contact us</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to take the first step? We're here to help you on your journey 
             to better mental health. Reach out today.
@@ -108,7 +108,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Schedule a Consultation</h2>
+            <h2 className="text-2xl font-bold mb-6">Schedule Your Evaluation</h2>
             <Card>
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-4">

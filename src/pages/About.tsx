@@ -105,7 +105,7 @@ const About = () => {
             to discuss how we can help you achieve your wellness goals.
           </p>
           <Button size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-            Schedule Evaluation
+            Schedule Your Evaluation
           </Button>
         </div>
       </div>
