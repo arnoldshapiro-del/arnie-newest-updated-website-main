@@ -178,7 +178,7 @@ const ApproachSection = () => {
             className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Schedule Your Consultation
+            Schedule Your Evaluation
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

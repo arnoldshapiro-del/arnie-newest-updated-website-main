@@ -38,7 +38,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Form Submitted",
-      description: "Thank you for your information. Please call our office to schedule your consultation.",
+      description: "Thank you for your information. Please call our office to schedule your evaluation.",
     });
     setFormData({
       name: '',

@@ -136,7 +136,7 @@ const ContactSection = () => {
                     <h4 className="text-lg font-semibold text-foreground mb-2">Emergency Services</h4>
                     <p className="text-muted-foreground text-sm">
                       If you're experiencing a psychiatric emergency, call 911 or go to your nearest emergency room. 
-                      For urgent but non-emergency concerns, call our office at (859) 341-7453.
+                      For non-emergency concerns, call our office at (859) 341-7453.
                     </p>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ const ContactSection = () => {
                   className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium w-full"
                 >
                   <Calendar className="w-4 h-4 mr-2" />
-                  Schedule Consultation
+                  Schedule Evaluation
                 </Button>
               </CardContent>
             </Card>

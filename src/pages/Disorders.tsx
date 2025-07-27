@@ -254,7 +254,7 @@ const Disorders = () => {
           <h2 className="text-2xl font-bold mb-4">Ready to Take the Next Step?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Don't let mental health challenges hold you back. Professional help is available, 
-            and recovery is possible. Contact us today to schedule your consultation.
+            and recovery is possible. Contact us today to schedule your evaluation.
           </p>
           <Button size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Get Help Now

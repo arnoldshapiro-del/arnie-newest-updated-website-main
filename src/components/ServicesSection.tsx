@@ -214,7 +214,7 @@ const ServicesSection = () => {
                 }
               }}
             >
-              Schedule Your Consultation
+              Schedule Your Evaluation
             </Button>
             <Button 
               variant="outline" 

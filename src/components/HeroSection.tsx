@@ -72,7 +72,7 @@ const HeroSection = () => {
                 size="lg" 
                 className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium text-lg px-8 py-6"
               >
-                Schedule Your Consultation
+                Schedule Your Evaluation
               </Button>
               <Button 
                 variant="outline" 
@@ -81,25 +81,6 @@ const HeroSection = () => {
               >
                 Learn About Our Approach
               </Button>
-            </div>
-
-            {/* Emergency contact */}
-            <div className="bg-card/50 backdrop-blur-sm rounded-lg p-6 border border-border">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-destructive/10 rounded-full flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-destructive" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Need Immediate Help?</h3>
-                  <p className="text-muted-foreground">
-                    Call us at{" "}
-                    <a href="tel:859-341-7453" className="text-primary font-medium hover:underline">
-                      (859) 341-7453
-                    </a>
-                    {" "}or contact emergency services if you're in crisis.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 

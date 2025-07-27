@@ -66,8 +66,7 @@ const AboutSection = () => {
                 Meet Dr. Shapiro
               </Badge>
               <h2 className="text-4xl font-bold text-foreground">
-                Three and a Half Decades of 
-                <span className="text-primary"> Compassionate Care</span>
+                <span className="text-primary">35+ Years of Compassionate Care</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Dr. Arnold Shapiro has dedicated over 35 years to helping thousands of patients 

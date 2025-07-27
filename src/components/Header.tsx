@@ -95,7 +95,7 @@ const Header = () => {
               className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium"
               asChild
             >
-              <Link to="/contact">Schedule Consultation</Link>
+              <Link to="/contact">Schedule Evaluation</Link>
             </Button>
           </div>
 
@@ -167,7 +167,7 @@ const Header = () => {
                 className="bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground shadow-medium mt-4"
                 asChild
               >
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Schedule Consultation</Link>
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Schedule Evaluation</Link>
               </Button>
             </div>
           </div>
