@@ -35,7 +35,7 @@ export function FAQSection() {
       <div className="container max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4">FAQ</Badge>
-          <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
         </div>
         
         <Accordion type="single" collapsible className="space-y-4">
@@ -45,10 +45,10 @@ export function FAQSection() {
               value={`item-${index}`}
               className="bg-card border border-border rounded-lg px-6 shadow-soft"
             >
-              <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline py-6">
+              <AccordionTrigger className="text-left text-xs font-semibold hover:no-underline py-24">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+              <AccordionContent className="text-muted-foreground leading-relaxed text-xs pb-24 pt-6">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
