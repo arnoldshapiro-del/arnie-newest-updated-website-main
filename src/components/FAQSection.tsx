@@ -31,24 +31,24 @@ const faqData = [
 
 export function FAQSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-6 bg-gradient-to-b from-background to-muted/30">
       <div className="container max-w-4xl mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-3">
           <Badge variant="outline" className="mb-4">FAQ</Badge>
-          <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-xl font-bold mb-3">Frequently Asked Questions</h2>
         </div>
         
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-1 mb-6">
           {faqData.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-card border border-border rounded-lg px-6 shadow-soft"
+              className="bg-card border border-border rounded-lg px-6 shadow-soft h-[18px]"
             >
-              <AccordionTrigger className="text-left text-xs font-semibold hover:no-underline py-24">
+              <AccordionTrigger className="text-left text-xs font-semibold hover:no-underline py-1 h-[18px] min-h-[18px]">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed text-xs pb-24 pt-6">
+              <AccordionContent className="text-muted-foreground leading-relaxed text-xs pb-1 pt-1 h-[18px] overflow-hidden">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
