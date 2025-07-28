@@ -86,7 +86,7 @@ const AboutSection = () => {
                   <div>
                     <h4 className="font-semibold text-foreground">Equal Partnership</h4>
                     <p className="text-muted-foreground">
-                      I never look down on patients. We're equals working together toward your wellness.
+                      We're equals working together toward your wellness.
                     </p>
                   </div>
                 </div>
