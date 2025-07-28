@@ -8,11 +8,7 @@ import {
   Clock,
   FileText,
   PillIcon,
-  UserCheck,
-  Check,
-  TestTube,
-  Users,
-  GamepadIcon
+  UserCheck
 } from "lucide-react";
 
 const ServicesSection = () => {
@@ -35,31 +31,37 @@ const ServicesSection = () => {
   ];
 
   const childServices = [
-    { col1: ["ADHD", "Anxiety disorders", "Autism spectrum disorder", "Bipolar disorder", "Disruptive Mood Dysregulation", "OCD", "Tourette's syndrome"], 
-      col2: ["Adjustment disorders", "Attachment disorders", "Behavior & discipline concerns", "Depression", "Fears, panic & anxiety", "Oppositional Defiant Disorder", "Sleep problems"] }
+    "ADHD",
+    "Anxiety disorders", 
+    "Autism spectrum disorder",
+    "Behavior & discipline concerns",
+    "Bipolar disorder",
+    "Depression",
+    "OCD",
+    "Oppositional Defiant Disorder",
+    "Tourette's syndrome"
   ];
 
   const adultServices = [
-    { col1: ["Anxiety disorders", "Bipolar disorder", "Obsessive-Compulsive Disorder", "Panic disorder", "Work-related stress", "Insomnia"], 
-      col2: ["ADHD", "Depression", "Mood disorders", "Relationship difficulties", "Life transitions", "Family problems"] }
+    "Anxiety disorders",
+    "ADHD",
+    "Bipolar disorder",
+    "Depression",
+    "Obsessive-Compulsive Disorder",
+    "Mood disorders",
+    "Panic disorder",
+    "Relationship difficulties",
+    "Work-related stress"
   ];
 
   const additionalServices = [
-    {
-      icon: TestTube,
-      title: "Genetic Testing",
-      description: "We offer GeneSight Testing to help identify how your genes may affect your response to certain medications, allowing for more personalized treatment."
-    },
-    {
-      icon: Users,
-      title: "Family Therapy",
-      description: "Individual and family psychotherapy sessions help address family dynamics and improve communication between family members."
-    },
-    {
-      icon: GamepadIcon,
-      title: "Play Therapy",
-      description: "Play therapy for young children offering comfort and a therapeutic environment where they can express themselves naturally."
-    }
+    "Genetic Testing with GeneSight",
+    "Family Therapy",
+    "Play Therapy for young children",
+    "Medication Management",
+    "Treatment Planning",
+    "Psychological Education",
+    "Crisis Intervention"
   ];
 
   return (
@@ -96,85 +98,101 @@ const ServicesSection = () => {
 
         {/* Services Header */}
         <div className="text-center mb-16">
+          <Badge variant="secondary" className="bg-trust/10 text-trust border-trust/20 mb-4">
+            <Stethoscope className="w-4 h-4 mr-1" />
+            Our Services
+          </Badge>
           <h2 className="text-4xl font-bold text-foreground mb-6">
             Our Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We specialize in outpatient treatment of many psychiatric disorders in children, 
-            families, and adults. Our diverse clinical staff is trained in a variety of treatment 
-            modalities and are ready to help.
+            We specialize in outpatient treatment of many psychiatric disorders in children, families, and adults. Our 
+            diverse clinical staff is trained in a variety of treatment modalities and are ready to help.
           </p>
         </div>
 
-        {/* Services Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        {/* Services Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {/* Child & Adolescent Services */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">Child & Adolescent Services</h3>
-            <p className="text-muted-foreground mb-6">Effective treatment for childhood disorders & concerns:</p>
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-2">
-              <div className="space-y-2">
-                {childServices[0].col1.map((service, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+          <Card className="bg-card border-border">
+            <CardHeader>
+              <CardTitle className="text-xl text-warm-accent text-center">
+                Child & Adolescent Services
+              </CardTitle>
+              <p className="text-muted-foreground text-center">
+                Effective treatment for childhood disorders & concerns
+              </p>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {childServices.map((service, index) => (
+                  <li key={index} className="flex items-start space-x-2">
+                    <div className="w-1.5 h-1.5 bg-warm-accent rounded-full mt-2 flex-shrink-0" />
                     <span className="text-foreground">{service}</span>
-                  </div>
+                  </li>
                 ))}
+              </ul>
+              <div className="mt-6">
+                <Button variant="link" className="text-warm-accent p-0 h-auto">
+                  Learn More
+                </Button>
               </div>
-              <div className="space-y-2">
-                {childServices[0].col2.map((service, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-foreground">{service}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Adult Services */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">Adult Services</h3>
-            <p className="text-muted-foreground mb-6">Comprehensive psychiatric care for adults:</p>
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-2">
-              <div className="space-y-2">
-                {adultServices[0].col1.map((service, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+          <Card className="bg-card border-border">
+            <CardHeader>
+              <CardTitle className="text-xl text-primary text-center">
+                Adult Services
+              </CardTitle>
+              <p className="text-muted-foreground text-center">
+                Comprehensive psychiatric care for adults
+              </p>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {adultServices.map((service, index) => (
+                  <li key={index} className="flex items-start space-x-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <span className="text-foreground">{service}</span>
-                  </div>
+                  </li>
                 ))}
+              </ul>
+              <div className="mt-6">
+                <Button variant="link" className="text-primary p-0 h-auto">
+                  Learn More
+                </Button>
               </div>
-              <div className="space-y-2">
-                {adultServices[0].col2.map((service, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-foreground">{service}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+            </CardContent>
+          </Card>
 
-        {/* Additional Services */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-foreground text-center mb-12">Additional Services</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => (
-              <Card key={index} className="bg-card border-border text-center">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <service.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl text-foreground">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Additional Services */}
+          <Card className="bg-card border-border">
+            <CardHeader>
+              <CardTitle className="text-xl text-healing text-center">
+                Additional Services
+              </CardTitle>
+              <p className="text-muted-foreground text-center">
+                Specialized services to complement your care
+              </p>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {additionalServices.map((service, index) => (
+                  <li key={index} className="flex items-start space-x-2">
+                    <div className="w-1.5 h-1.5 bg-healing rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{service}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Button variant="link" className="text-healing p-0 h-auto">
+                  Learn More
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Call to action */}
