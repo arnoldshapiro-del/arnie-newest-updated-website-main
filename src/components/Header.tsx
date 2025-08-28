@@ -72,6 +72,12 @@ const Header = () => {
               Disorders
             </Link>
             <Link 
+              to="/screening" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/screening' ? 'text-primary border-b-2 border-primary' : ''}`}
+            >
+              Free Screening
+            </Link>
+            <Link 
               to="/contact" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/contact' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
@@ -139,6 +145,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Disorders
+              </Link>
+              <Link 
+                to="/screening" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/screening' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Free Screening
               </Link>
               <Link 
                 to="/contact" 
