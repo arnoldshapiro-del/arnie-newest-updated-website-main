@@ -874,6 +874,15 @@ const Screening = () => {
         {/* Hero Section */}
         <Card className="mb-8 border-2 border-blue-200">
           <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-lg">
+            <div className="flex justify-center mb-4">
+              <Button 
+                variant="outline" 
+                className="bg-white text-blue-700 hover:bg-blue-50 border-2 border-white"
+                onClick={() => window.location.href = '/'}
+              >
+                🏠 Back to Main Site
+              </Button>
+            </div>
             <CardTitle className="text-4xl font-bold mb-4">
               Professional Mental Health Screening Tools
             </CardTitle>

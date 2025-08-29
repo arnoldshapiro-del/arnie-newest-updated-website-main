@@ -75,7 +75,7 @@ const Header = () => {
               to="/screening" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${location.pathname === '/screening' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
-              Free Screening
+              📋 Free Screening
             </Link>
             <Link 
               to="/contact" 
