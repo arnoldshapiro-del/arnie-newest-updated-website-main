@@ -7,7 +7,10 @@
   <url><loc>https://YOURDOMAIN/conditions/bipolar/</loc></url>
   <url><loc>https://YOURDOMAIN/locations/cincinnati/</loc></url>
   <url><loc>https://YOURDOMAIN/locations/northern-kentucky/</loc></url>
-  <url><loc>https://YOURDOMAIN/screenings/adhd.html</loc></url>
-  <url><loc>https://YOURDOMAIN/screenings/phq9.html</loc></url>
-  <url><loc>https://YOURDOMAIN/screenings/gad7.html</loc></url>
+  <url><loc>https://YOURDOMAIN/screening/adhd.html</loc></url>
+  <url><loc>https://YOURDOMAIN/screening/phq9.html</loc></url>
+  <url><loc>https://YOURDOMAIN/screening/gad7.html</loc></url>
+  <url><loc>https://YOURDOMAIN/screening/bipolar.html</loc></url>
+  <url><loc>https://YOURDOMAIN/screening/ptsd.html</loc></url>
+  <url><loc>https://YOURDOMAIN/screening/ocd.html</loc></url>
 </urlset>
