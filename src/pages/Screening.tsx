@@ -40,6 +40,294 @@ const Screening = () => {
   const [privacyPreference, setPrivacyPreference] = useState('anonymous');
 
   const assessments: Record<string, Assessment> = {
+    autism: {
+      id: 'autism',
+      title: 'Autism Spectrum Assessment (AQ-10)',
+      description: 'Screening for autism spectrum traits in adults and adolescents',
+      icon: '🧩',
+      stats: { questions: 10, minutes: '4-5', rating: 'Comprehensive' },
+      questions: [
+        {
+          id: 'autism_1',
+          text: 'I often notice small sounds when others do not',
+          options: [
+            { value: 0, text: 'Definitely disagree' },
+            { value: 0, text: 'Slightly disagree' },
+            { value: 1, text: 'Slightly agree' },
+            { value: 1, text: 'Definitely agree' }
+          ]
+        },
+        {
+          id: 'autism_2',
+          text: 'I usually concentrate more on the whole picture, rather than the small details',
+          options: [
+            { value: 1, text: 'Definitely disagree' },
+            { value: 1, text: 'Slightly disagree' },
+            { value: 0, text: 'Slightly agree' },
+            { value: 0, text: 'Definitely agree' }
+          ]
+        },
+        {
+          id: 'autism_3',
+          text: 'I find it easy to do more than one thing at once',
+          options: [
+            { value: 1, text: 'Definitely disagree' },
+            { value: 1, text: 'Slightly disagree' },
+            { value: 0, text: 'Slightly agree' },
+            { value: 0, text: 'Definitely agree' }
+          ]
+        }
+      ]
+    },
+    substance: {
+      id: 'substance',
+      title: 'Substance Use Screening (CAGE-AID)',
+      description: 'Assessment for alcohol and drug use concerns',
+      icon: '🚫',
+      stats: { questions: 4, minutes: '2-3', rating: 'Quick Screen' },
+      questions: [
+        {
+          id: 'sub_1',
+          text: 'Have you ever felt you ought to Cut down on your drinking or drug use?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'sub_2',
+          text: 'Have people Annoyed you by criticizing your drinking or drug use?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'sub_3',
+          text: 'Have you felt bad or Guilty about your drinking or drug use?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'sub_4',
+          text: 'Have you ever had a drink or used drugs first thing in the morning to steady your nerves?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        }
+      ]
+    },
+    sleep: {
+      id: 'sleep',
+      title: 'Sleep Disorder Screening (ISI)',
+      description: 'Insomnia Severity Index for sleep problems assessment',
+      icon: '😴',
+      stats: { questions: 7, minutes: '3-4', rating: 'Sleep Focus' },
+      questions: [
+        {
+          id: 'sleep_1',
+          text: 'Difficulty falling asleep',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Mild' },
+            { value: 2, text: 'Moderate' },
+            { value: 3, text: 'Severe' },
+            { value: 4, text: 'Very Severe' }
+          ]
+        },
+        {
+          id: 'sleep_2',
+          text: 'Difficulty staying asleep',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Mild' },
+            { value: 2, text: 'Moderate' },
+            { value: 3, text: 'Severe' },
+            { value: 4, text: 'Very Severe' }
+          ]
+        },
+        {
+          id: 'sleep_3',
+          text: 'Problem waking up too early',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Mild' },
+            { value: 2, text: 'Moderate' },
+            { value: 3, text: 'Severe' },
+            { value: 4, text: 'Very Severe' }
+          ]
+        }
+      ]
+    },
+    eating: {
+      id: 'eating',
+      title: 'Eating Disorder Screening (SCOFF)',
+      description: 'Quick screening for eating disorder symptoms',
+      icon: '🍽️',
+      stats: { questions: 5, minutes: '2-3', rating: 'Quick Screen' },
+      questions: [
+        {
+          id: 'eat_1',
+          text: 'Do you make yourself Sick because you feel uncomfortably full?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'eat_2',
+          text: 'Do you worry you have lost Control over how much you eat?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'eat_3',
+          text: 'Have you recently lost more than One stone (14 pounds) in a 3-month period?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'eat_4',
+          text: 'Do you believe yourself to be Fat when others say you are too thin?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'eat_5',
+          text: 'Would you say that Food dominates your life?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        }
+      ]
+    },
+    bipolar: {
+      id: 'bipolar',
+      title: 'Bipolar Disorder Screening (MDQ)',
+      description: 'Mood Disorder Questionnaire for bipolar symptoms',
+      icon: '🎭',
+      stats: { questions: 13, minutes: '5-7', rating: 'Mood Focus' },
+      questions: [
+        {
+          id: 'bipolar_1',
+          text: 'You felt so good or so hyper that other people thought you were not your normal self?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'bipolar_2',
+          text: 'You were so irritable that you shouted at people or started fights or arguments?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        },
+        {
+          id: 'bipolar_3',
+          text: 'You felt much more self-confident than usual?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        }
+      ]
+    },
+    ptsd: {
+      id: 'ptsd',
+      title: 'PTSD Screening (PCL-5)',
+      description: 'Post-Traumatic Stress Disorder assessment',
+      icon: '🛡️',
+      stats: { questions: 20, minutes: '8-10', rating: 'Trauma Focus' },
+      questions: [
+        {
+          id: 'ptsd_1',
+          text: 'Repeated, disturbing, and unwanted memories of the stressful experience',
+          options: [
+            { value: 0, text: 'Not at all' },
+            { value: 1, text: 'A little bit' },
+            { value: 2, text: 'Moderately' },
+            { value: 3, text: 'Quite a bit' },
+            { value: 4, text: 'Extremely' }
+          ]
+        },
+        {
+          id: 'ptsd_2',
+          text: 'Repeated, disturbing dreams of the stressful experience',
+          options: [
+            { value: 0, text: 'Not at all' },
+            { value: 1, text: 'A little bit' },
+            { value: 2, text: 'Moderately' },
+            { value: 3, text: 'Quite a bit' },
+            { value: 4, text: 'Extremely' }
+          ]
+        },
+        {
+          id: 'ptsd_3',
+          text: 'Suddenly feeling or acting as if the stressful experience were actually happening again',
+          options: [
+            { value: 0, text: 'Not at all' },
+            { value: 1, text: 'A little bit' },
+            { value: 2, text: 'Moderately' },
+            { value: 3, text: 'Quite a bit' },
+            { value: 4, text: 'Extremely' }
+          ]
+        }
+      ]
+    },
+    ocd: {
+      id: 'ocd',
+      title: 'OCD Screening (Y-BOCS)',
+      description: 'Yale-Brown Obsessive Compulsive Scale screening',
+      icon: '🔄',
+      stats: { questions: 10, minutes: '5-7', rating: 'Detailed' },
+      questions: [
+        {
+          id: 'ocd_1',
+          text: 'Time occupied by obsessive thoughts: How much of your time is occupied by obsessive thoughts?',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Less than 1 hour per day' },
+            { value: 2, text: '1 to 3 hours per day' },
+            { value: 3, text: '3 to 8 hours per day' },
+            { value: 4, text: 'More than 8 hours per day' }
+          ]
+        },
+        {
+          id: 'ocd_2',
+          text: 'Interference due to obsessive thoughts: How much do your obsessive thoughts interfere with your functioning?',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Mild interference' },
+            { value: 2, text: 'Moderate interference' },
+            { value: 3, text: 'Severe interference' },
+            { value: 4, text: 'Extreme interference' }
+          ]
+        },
+        {
+          id: 'ocd_3',
+          text: 'Distress associated with obsessive thoughts: How much distress do your obsessive thoughts cause you?',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Mild distress' },
+            { value: 2, text: 'Moderate distress' },
+            { value: 3, text: 'Severe distress' },
+            { value: 4, text: 'Extreme distress' }
+          ]
+        }
+      ]
+    },
     adhd: {
       id: 'adhd',
       title: 'ADHD Assessment',
