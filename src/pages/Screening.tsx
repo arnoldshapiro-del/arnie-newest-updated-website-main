@@ -782,7 +782,7 @@ const Screening = () => {
         </Card>
 
         {/* Screening Tools Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {Object.entries(assessments).map(([key, assessment]) => (
             <Card 
               key={key} 
@@ -793,7 +793,7 @@ const Screening = () => {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="text-4xl bg-blue-600 text-white p-3 rounded-lg">{assessment.icon}</div>
                   <div className="flex-1">
-                    <CardTitle className="text-xl mb-2 text-blue-700">{assessment.title}</CardTitle>
+                    <CardTitle className="text-lg mb-2 text-blue-700">{assessment.title}</CardTitle>
                     <p className="text-gray-600 text-sm">{assessment.description}</p>
                   </div>
                 </div>
