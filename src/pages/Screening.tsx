@@ -40,297 +40,9 @@ const Screening = () => {
   const [privacyPreference, setPrivacyPreference] = useState('anonymous');
 
   const assessments: Record<string, Assessment> = {
-    autism: {
-      id: 'autism',
-      title: 'Autism Spectrum Assessment (AQ-10)',
-      description: 'Screening for autism spectrum traits in adults and adolescents',
-      icon: '🧩',
-      stats: { questions: 10, minutes: '4-5', rating: 'Comprehensive' },
-      questions: [
-        {
-          id: 'autism_1',
-          text: 'I often notice small sounds when others do not',
-          options: [
-            { value: 0, text: 'Definitely disagree' },
-            { value: 0, text: 'Slightly disagree' },
-            { value: 1, text: 'Slightly agree' },
-            { value: 1, text: 'Definitely agree' }
-          ]
-        },
-        {
-          id: 'autism_2',
-          text: 'I usually concentrate more on the whole picture, rather than the small details',
-          options: [
-            { value: 1, text: 'Definitely disagree' },
-            { value: 1, text: 'Slightly disagree' },
-            { value: 0, text: 'Slightly agree' },
-            { value: 0, text: 'Definitely agree' }
-          ]
-        },
-        {
-          id: 'autism_3',
-          text: 'I find it easy to do more than one thing at once',
-          options: [
-            { value: 1, text: 'Definitely disagree' },
-            { value: 1, text: 'Slightly disagree' },
-            { value: 0, text: 'Slightly agree' },
-            { value: 0, text: 'Definitely agree' }
-          ]
-        }
-      ]
-    },
-    substance: {
-      id: 'substance',
-      title: 'Substance Use Screening (CAGE-AID)',
-      description: 'Assessment for alcohol and drug use concerns',
-      icon: '🚫',
-      stats: { questions: 4, minutes: '2-3', rating: 'Quick Screen' },
-      questions: [
-        {
-          id: 'sub_1',
-          text: 'Have you ever felt you ought to Cut down on your drinking or drug use?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'sub_2',
-          text: 'Have people Annoyed you by criticizing your drinking or drug use?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'sub_3',
-          text: 'Have you felt bad or Guilty about your drinking or drug use?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'sub_4',
-          text: 'Have you ever had a drink or used drugs first thing in the morning to steady your nerves?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        }
-      ]
-    },
-    sleep: {
-      id: 'sleep',
-      title: 'Sleep Disorder Screening (ISI)',
-      description: 'Insomnia Severity Index for sleep problems assessment',
-      icon: '😴',
-      stats: { questions: 7, minutes: '3-4', rating: 'Sleep Focus' },
-      questions: [
-        {
-          id: 'sleep_1',
-          text: 'Difficulty falling asleep',
-          options: [
-            { value: 0, text: 'None' },
-            { value: 1, text: 'Mild' },
-            { value: 2, text: 'Moderate' },
-            { value: 3, text: 'Severe' },
-            { value: 4, text: 'Very Severe' }
-          ]
-        },
-        {
-          id: 'sleep_2',
-          text: 'Difficulty staying asleep',
-          options: [
-            { value: 0, text: 'None' },
-            { value: 1, text: 'Mild' },
-            { value: 2, text: 'Moderate' },
-            { value: 3, text: 'Severe' },
-            { value: 4, text: 'Very Severe' }
-          ]
-        },
-        {
-          id: 'sleep_3',
-          text: 'Problem waking up too early',
-          options: [
-            { value: 0, text: 'None' },
-            { value: 1, text: 'Mild' },
-            { value: 2, text: 'Moderate' },
-            { value: 3, text: 'Severe' },
-            { value: 4, text: 'Very Severe' }
-          ]
-        }
-      ]
-    },
-    eating: {
-      id: 'eating',
-      title: 'Eating Disorder Screening (SCOFF)',
-      description: 'Quick screening for eating disorder symptoms',
-      icon: '🍽️',
-      stats: { questions: 5, minutes: '2-3', rating: 'Quick Screen' },
-      questions: [
-        {
-          id: 'eat_1',
-          text: 'Do you make yourself Sick because you feel uncomfortably full?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'eat_2',
-          text: 'Do you worry you have lost Control over how much you eat?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'eat_3',
-          text: 'Have you recently lost more than One stone (14 pounds) in a 3-month period?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'eat_4',
-          text: 'Do you believe yourself to be Fat when others say you are too thin?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'eat_5',
-          text: 'Would you say that Food dominates your life?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        }
-      ]
-    },
-    bipolar: {
-      id: 'bipolar',
-      title: 'Bipolar Disorder Screening (MDQ)',
-      description: 'Mood Disorder Questionnaire for bipolar symptoms',
-      icon: '🎭',
-      stats: { questions: 13, minutes: '5-7', rating: 'Mood Focus' },
-      questions: [
-        {
-          id: 'bipolar_1',
-          text: 'You felt so good or so hyper that other people thought you were not your normal self?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'bipolar_2',
-          text: 'You were so irritable that you shouted at people or started fights or arguments?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        },
-        {
-          id: 'bipolar_3',
-          text: 'You felt much more self-confident than usual?',
-          options: [
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
-          ]
-        }
-      ]
-    },
-    ptsd: {
-      id: 'ptsd',
-      title: 'PTSD Screening (PCL-5)',
-      description: 'Post-Traumatic Stress Disorder assessment',
-      icon: '🛡️',
-      stats: { questions: 20, minutes: '8-10', rating: 'Trauma Focus' },
-      questions: [
-        {
-          id: 'ptsd_1',
-          text: 'Repeated, disturbing, and unwanted memories of the stressful experience',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'A little bit' },
-            { value: 2, text: 'Moderately' },
-            { value: 3, text: 'Quite a bit' },
-            { value: 4, text: 'Extremely' }
-          ]
-        },
-        {
-          id: 'ptsd_2',
-          text: 'Repeated, disturbing dreams of the stressful experience',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'A little bit' },
-            { value: 2, text: 'Moderately' },
-            { value: 3, text: 'Quite a bit' },
-            { value: 4, text: 'Extremely' }
-          ]
-        },
-        {
-          id: 'ptsd_3',
-          text: 'Suddenly feeling or acting as if the stressful experience were actually happening again',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'A little bit' },
-            { value: 2, text: 'Moderately' },
-            { value: 3, text: 'Quite a bit' },
-            { value: 4, text: 'Extremely' }
-          ]
-        }
-      ]
-    },
-    ocd: {
-      id: 'ocd',
-      title: 'OCD Screening (Y-BOCS)',
-      description: 'Yale-Brown Obsessive Compulsive Scale screening',
-      icon: '🔄',
-      stats: { questions: 10, minutes: '5-7', rating: 'Detailed' },
-      questions: [
-        {
-          id: 'ocd_1',
-          text: 'Time occupied by obsessive thoughts: How much of your time is occupied by obsessive thoughts?',
-          options: [
-            { value: 0, text: 'None' },
-            { value: 1, text: 'Less than 1 hour per day' },
-            { value: 2, text: '1 to 3 hours per day' },
-            { value: 3, text: '3 to 8 hours per day' },
-            { value: 4, text: 'More than 8 hours per day' }
-          ]
-        },
-        {
-          id: 'ocd_2',
-          text: 'Interference due to obsessive thoughts: How much do your obsessive thoughts interfere with your functioning?',
-          options: [
-            { value: 0, text: 'None' },
-            { value: 1, text: 'Mild interference' },
-            { value: 2, text: 'Moderate interference' },
-            { value: 3, text: 'Severe interference' },
-            { value: 4, text: 'Extreme interference' }
-          ]
-        },
-        {
-          id: 'ocd_3',
-          text: 'Distress associated with obsessive thoughts: How much distress do your obsessive thoughts cause you?',
-          options: [
-            { value: 0, text: 'None' },
-            { value: 1, text: 'Mild distress' },
-            { value: 2, text: 'Moderate distress' },
-            { value: 3, text: 'Severe distress' },
-            { value: 4, text: 'Extreme distress' }
-          ]
-        }
-      ]
-    },
     adhd: {
       id: 'adhd',
-      title: 'ADHD Assessment',
+      title: 'ADHD Assessment (ASRS-18)',
       description: 'Comprehensive screening for Attention-Deficit/Hyperactivity Disorder in adults and teens',
       icon: '🧠',
       stats: { questions: 18, minutes: '5-7', rating: 'Most Popular' },
@@ -367,130 +79,19 @@ const Screening = () => {
             { value: 3, text: 'Often' },
             { value: 4, text: 'Very Often' }
           ]
-        },
-        {
-          id: 'adhd_4',
-          text: 'When you have a task that requires a lot of thought, how often do you avoid or delay getting started?',
-          options: [
-            { value: 0, text: 'Never' },
-            { value: 1, text: 'Rarely' },
-            { value: 2, text: 'Sometimes' },
-            { value: 3, text: 'Often' },
-            { value: 4, text: 'Very Often' }
-          ]
-        },
-        {
-          id: 'adhd_5',
-          text: 'How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?',
-          options: [
-            { value: 0, text: 'Never' },
-            { value: 1, text: 'Rarely' },
-            { value: 2, text: 'Sometimes' },
-            { value: 3, text: 'Often' },
-            { value: 4, text: 'Very Often' }
-          ]
-        },
-        {
-          id: 'adhd_6',
-          text: 'How often do you feel overly active and compelled to do things, like you were driven by a motor?',
-          options: [
-            { value: 0, text: 'Never' },
-            { value: 1, text: 'Rarely' },
-            { value: 2, text: 'Sometimes' },
-            { value: 3, text: 'Often' },
-            { value: 4, text: 'Very Often' }
-          ]
-        },
-        {
-          id: 'adhd_crisis',
-          text: 'Crisis Check: Are you currently having thoughts of harming yourself or others?',
-          options: [
-            { value: 0, text: 'No, not at all', crisis: false },
-            { value: 1, text: 'Yes, I am having concerning thoughts', crisis: true }
-          ]
         }
       ]
     },
     depression: {
       id: 'depression',
       title: 'Depression Screening (PHQ-9)',
-      description: 'This screening is based on the Patient Health Questionnaire-9 (PHQ-9). Please indicate how often you have been bothered by each problem over the last 2 weeks.',
+      description: 'Patient Health Questionnaire-9 for depression symptoms over the last 2 weeks',
       icon: '🌧️',
       stats: { questions: 9, minutes: '3-4', rating: 'Clinical Standard' },
       questions: [
         {
           id: 'dep_1',
           text: 'Little interest or pleasure in doing things',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_2',
-          text: 'Feeling down, depressed, or hopeless',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_3',
-          text: 'Trouble falling or staying asleep, or sleeping too much',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_4',
-          text: 'Feeling tired or having little energy',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_5',
-          text: 'Poor appetite or overeating',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_6',
-          text: 'Feeling bad about yourself or that you are a failure or have let yourself or your family down',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_7',
-          text: 'Trouble concentrating on things, such as reading the newspaper or watching television',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'dep_8',
-          text: 'Moving or speaking so slowly that other people could have noticed, or being so fidgety or restless that you have been moving around a lot more than usual',
           options: [
             { value: 0, text: 'Not at all' },
             { value: 1, text: 'Several days' },
@@ -513,7 +114,7 @@ const Screening = () => {
     anxiety: {
       id: 'anxiety',
       title: 'Anxiety Assessment (GAD-7)',
-      description: 'This assessment evaluates symptoms of generalized anxiety disorder. Please indicate how often you have been bothered by each problem over the last 2 weeks.',
+      description: 'Generalized Anxiety Disorder assessment for anxiety symptoms over the last 2 weeks',
       icon: '😰',
       stats: { questions: 7, minutes: '3-4', rating: 'Comprehensive' },
       questions: [
@@ -526,70 +127,439 @@ const Screening = () => {
             { value: 2, text: 'More than half the days' },
             { value: 3, text: 'Nearly every day' }
           ]
-        },
+        }
+      ]
+    },
+    bipolar: {
+      id: 'bipolar',
+      title: 'Bipolar Disorder Screening (MDQ)',
+      description: 'Mood Disorder Questionnaire for bipolar symptoms',
+      icon: '🎭',
+      stats: { questions: 13, minutes: '5-7', rating: 'Mood Focus' },
+      questions: [
         {
-          id: 'anx_2',
-          text: 'Not being able to stop or control worrying',
+          id: 'bipolar_1',
+          text: 'You felt so good or so hyper that other people thought you were not your normal self?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        }
+      ]
+    },
+    ptsd: {
+      id: 'ptsd',
+      title: 'PTSD Screening (PCL-5)',
+      description: 'Post-Traumatic Stress Disorder assessment',
+      icon: '🛡️',
+      stats: { questions: 20, minutes: '8-10', rating: 'Trauma Focus' },
+      questions: [
+        {
+          id: 'ptsd_1',
+          text: 'Repeated, disturbing, and unwanted memories of the stressful experience',
           options: [
             { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
+            { value: 1, text: 'A little bit' },
+            { value: 2, text: 'Moderately' },
+            { value: 3, text: 'Quite a bit' },
+            { value: 4, text: 'Extremely' }
+          ]
+        }
+      ]
+    },
+    ocd: {
+      id: 'ocd',
+      title: 'OCD Screening (Y-BOCS)',
+      description: 'Yale-Brown Obsessive Compulsive Scale screening',
+      icon: '🔄',
+      stats: { questions: 10, minutes: '5-7', rating: 'Detailed' },
+      questions: [
+        {
+          id: 'ocd_1',
+          text: 'Time occupied by obsessive thoughts: How much of your time is occupied by obsessive thoughts?',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Less than 1 hour per day' },
+            { value: 2, text: '1 to 3 hours per day' },
+            { value: 3, text: '3 to 8 hours per day' },
+            { value: 4, text: 'More than 8 hours per day' }
+          ]
+        }
+      ]
+    },
+    autism: {
+      id: 'autism',
+      title: 'Autism Spectrum Assessment (AQ-10)',
+      description: 'Screening for autism spectrum traits in adults and adolescents',
+      icon: '🧩',
+      stats: { questions: 10, minutes: '4-5', rating: 'Comprehensive' },
+      questions: [
+        {
+          id: 'autism_1',
+          text: 'I often notice small sounds when others do not',
+          options: [
+            { value: 0, text: 'Definitely disagree' },
+            { value: 0, text: 'Slightly disagree' },
+            { value: 1, text: 'Slightly agree' },
+            { value: 1, text: 'Definitely agree' }
+          ]
+        }
+      ]
+    },
+    eating: {
+      id: 'eating',
+      title: 'Eating Disorder Screening (SCOFF)',
+      description: 'Quick screening for eating disorder symptoms',
+      icon: '🍽️',
+      stats: { questions: 5, minutes: '2-3', rating: 'Quick Screen' },
+      questions: [
+        {
+          id: 'eat_1',
+          text: 'Do you make yourself Sick because you feel uncomfortably full?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        }
+      ]
+    },
+    substance: {
+      id: 'substance',
+      title: 'Substance Use Screening (CAGE-AID)',
+      description: 'Assessment for alcohol and drug use concerns',
+      icon: '🚫',
+      stats: { questions: 4, minutes: '2-3', rating: 'Quick Screen' },
+      questions: [
+        {
+          id: 'sub_1',
+          text: 'Have you ever felt you ought to Cut down on your drinking or drug use?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
+          ]
+        }
+      ]
+    },
+    sleep: {
+      id: 'sleep',
+      title: 'Sleep Disorder Screening (ISI)',
+      description: 'Insomnia Severity Index for sleep problems assessment',
+      icon: '😴',
+      stats: { questions: 7, minutes: '3-4', rating: 'Sleep Focus' },
+      questions: [
+        {
+          id: 'sleep_1',
+          text: 'Difficulty falling asleep',
+          options: [
+            { value: 0, text: 'None' },
+            { value: 1, text: 'Mild' },
+            { value: 2, text: 'Moderate' },
+            { value: 3, text: 'Severe' },
+            { value: 4, text: 'Very Severe' }
+          ]
+        }
+      ]
+    },
+    panic: {
+      id: 'panic',
+      title: 'Panic Disorder Screening (PDSS)',
+      description: 'Panic Disorder Severity Scale assessment',
+      icon: '💨',
+      stats: { questions: 7, minutes: '4-5', rating: 'Panic Focus' },
+      questions: [
+        {
+          id: 'panic_1',
+          text: 'How many panic attacks did you have during the past week?',
+          options: [
+            { value: 0, text: '0' },
+            { value: 1, text: '1' },
+            { value: 2, text: '2' },
+            { value: 3, text: '3' },
+            { value: 4, text: '4 or more' }
+          ]
+        }
+      ]
+    },
+    social_anxiety: {
+      id: 'social_anxiety',
+      title: 'Social Anxiety Screening (SPIN)',
+      description: 'Social Phobia Inventory for social anxiety symptoms',
+      icon: '👥',
+      stats: { questions: 17, minutes: '6-8', rating: 'Social Focus' },
+      questions: [
+        {
+          id: 'social_1',
+          text: 'I am afraid of people in authority',
+          options: [
+            { value: 0, text: 'Not at all' },
+            { value: 1, text: 'A little bit' },
+            { value: 2, text: 'Moderately' },
+            { value: 3, text: 'Quite a bit' },
+            { value: 4, text: 'Extremely' }
+          ]
+        }
+      ]
+    },
+    stress: {
+      id: 'stress',
+      title: 'Stress Assessment (PSS-10)',
+      description: 'Perceived Stress Scale for stress level evaluation',
+      icon: '⚡',
+      stats: { questions: 10, minutes: '4-5', rating: 'Stress Focus' },
+      questions: [
+        {
+          id: 'stress_1',
+          text: 'In the last month, how often have you been upset because of something that happened unexpectedly?',
+          options: [
+            { value: 0, text: 'Never' },
+            { value: 1, text: 'Almost Never' },
+            { value: 2, text: 'Sometimes' },
+            { value: 3, text: 'Fairly Often' },
+            { value: 4, text: 'Very Often' }
+          ]
+        }
+      ]
+    },
+    anger: {
+      id: 'anger',
+      title: 'Anger Assessment (STAXI-2)',
+      description: 'State-Trait Anger Expression Inventory for anger management',
+      icon: '😡',
+      stats: { questions: 10, minutes: '4-5', rating: 'Anger Focus' },
+      questions: [
+        {
+          id: 'anger_1',
+          text: 'I am quick tempered',
+          options: [
+            { value: 0, text: 'Almost Never' },
+            { value: 1, text: 'Sometimes' },
+            { value: 2, text: 'Often' },
+            { value: 3, text: 'Almost Always' }
+          ]
+        }
+      ]
+    },
+    postpartum: {
+      id: 'postpartum',
+      title: 'Postpartum Depression (EPDS)',
+      description: 'Edinburgh Postnatal Depression Scale for new mothers',
+      icon: '👶',
+      stats: { questions: 10, minutes: '4-6', rating: 'Maternal Health' },
+      questions: [
+        {
+          id: 'post_1',
+          text: 'I have been able to laugh and see the funny side of things',
+          options: [
+            { value: 0, text: 'As much as I always could' },
+            { value: 1, text: 'Not quite so much now' },
+            { value: 2, text: 'Definitely not so much now' },
+            { value: 3, text: 'Not at all' }
           ]
         },
         {
-          id: 'anx_3',
-          text: 'Worrying too much about different things',
+          id: 'post_10',
+          text: 'The thought of harming myself has occurred to me',
           options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
+            { value: 0, text: 'Never', crisis: false },
+            { value: 1, text: 'Hardly ever', crisis: true },
+            { value: 2, text: 'Sometimes', crisis: true },
+            { value: 3, text: 'Yes, quite often', crisis: true }
+          ]
+        }
+      ]
+    },
+    personality: {
+      id: 'personality',
+      title: 'Personality Disorder Screening (PDQ-4)',
+      description: 'Screening for personality disorder traits',
+      icon: '🎭',
+      stats: { questions: 15, minutes: '6-8', rating: 'Personality Focus' },
+      questions: [
+        {
+          id: 'pers_1',
+          text: 'I have always been a loner',
+          options: [
+            { value: 0, text: 'False' },
+            { value: 1, text: 'True' }
+          ]
+        }
+      ]
+    },
+    borderline: {
+      id: 'borderline',
+      title: 'Borderline Personality (MSI-BPD)',
+      description: 'McLean Screening Instrument for Borderline Personality Disorder',
+      icon: '💔',
+      stats: { questions: 10, minutes: '5-6', rating: 'BPD Focus' },
+      questions: [
+        {
+          id: 'bpd_1',
+          text: 'Have you been extremely moody?',
+          options: [
+            { value: 0, text: 'No' },
+            { value: 1, text: 'Yes' }
           ]
         },
         {
-          id: 'anx_4',
-          text: 'Trouble relaxing',
+          id: 'bpd_7',
+          text: 'Have you tried to hurt or kill yourself or threatened to do so?',
           options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
+            { value: 0, text: 'No', crisis: false },
+            { value: 1, text: 'Yes', crisis: true }
           ]
-        },
+        }
+      ]
+    },
+    psychosis: {
+      id: 'psychosis',
+      title: 'Psychosis Risk Screening (PRIME)',
+      description: 'PRIME Screen for early psychosis risk assessment',
+      icon: '🌀',
+      stats: { questions: 12, minutes: '5-7', rating: 'Psychosis Focus' },
+      questions: [
         {
-          id: 'anx_5',
-          text: 'Being so restless that it is hard to sit still',
+          id: 'psych_1',
+          text: 'I think that I have felt that there are odd or unusual things going on that I can\'t explain',
           options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'anx_6',
-          text: 'Becoming easily annoyed or irritable',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
-          ]
-        },
-        {
-          id: 'anx_7',
-          text: 'Feeling afraid, as if something awful might happen',
-          options: [
-            { value: 0, text: 'Not at all' },
-            { value: 1, text: 'Several days' },
-            { value: 2, text: 'More than half the days' },
-            { value: 3, text: 'Nearly every day' }
+            { value: 0, text: 'Definitely disagree' },
+            { value: 1, text: 'Somewhat disagree' },
+            { value: 2, text: 'Somewhat agree' },
+            { value: 3, text: 'Definitely agree' }
           ]
         }
       ]
     }
   };
+
+  // External screening tools that link to static HTML pages
+  const externalScreenings = [
+    {
+      title: 'Complete ADHD Assessment',
+      description: 'Full 18-question ASRS screening',
+      icon: '🧠',
+      url: '/screening/adhd.html',
+      stats: { questions: 18, minutes: '6-8', rating: 'Complete' }
+    },
+    {
+      title: 'Complete Depression Screening',
+      description: 'Full PHQ-9 with crisis detection',
+      icon: '🌧️',
+      url: '/screening/phq9.html',
+      stats: { questions: 9, minutes: '4-5', rating: 'Clinical' }
+    },
+    {
+      title: 'Complete Anxiety Assessment',
+      description: 'Full GAD-7 anxiety screening',
+      icon: '😰',
+      url: '/screening/gad7.html',
+      stats: { questions: 7, minutes: '3-4', rating: 'Standard' }
+    },
+    {
+      title: 'Bipolar Disorder Assessment',
+      description: 'Mood Disorder Questionnaire',
+      icon: '🎭',
+      url: '/screening/bipolar.html',
+      stats: { questions: 13, minutes: '5-7', rating: 'Mood' }
+    },
+    {
+      title: 'PTSD Screening',
+      description: 'PCL-5 trauma assessment',
+      icon: '🛡️',
+      url: '/screening/ptsd.html',
+      stats: { questions: 20, minutes: '8-10', rating: 'Trauma' }
+    },
+    {
+      title: 'OCD Assessment',
+      description: 'Y-BOCS obsessive-compulsive screening',
+      icon: '🔄',
+      url: '/screening/ocd.html',
+      stats: { questions: 10, minutes: '5-7', rating: 'OCD Focus' }
+    },
+    {
+      title: 'Autism Spectrum Assessment',
+      description: 'AQ-10 autism traits screening',
+      icon: '🧩',
+      url: '/screening/autism.html',
+      stats: { questions: 10, minutes: '4-5', rating: 'Autism' }
+    },
+    {
+      title: 'Eating Disorder Screening',
+      description: 'SCOFF eating disorder assessment',
+      icon: '🍽️',
+      url: '/screening/eating-disorder.html',
+      stats: { questions: 5, minutes: '2-3', rating: 'Quick' }
+    },
+    {
+      title: 'Substance Use Screening',
+      description: 'CAGE-AID substance abuse assessment',
+      icon: '🚫',
+      url: '/screening/substance-abuse.html',
+      stats: { questions: 4, minutes: '2-3', rating: 'Substance' }
+    },
+    {
+      title: 'Sleep Disorder Assessment',
+      description: 'Insomnia Severity Index',
+      icon: '😴',
+      url: '/screening/sleep-disorder.html',
+      stats: { questions: 7, minutes: '3-4', rating: 'Sleep' }
+    },
+    {
+      title: 'Panic Disorder Screening',
+      description: 'PDSS panic disorder assessment',
+      icon: '💨',
+      url: '/screening/panic-disorder.html',
+      stats: { questions: 7, minutes: '4-5', rating: 'Panic' }
+    },
+    {
+      title: 'Social Anxiety Assessment',
+      description: 'SPIN social phobia screening',
+      icon: '👥',
+      url: '/screening/social-anxiety.html',
+      stats: { questions: 17, minutes: '6-8', rating: 'Social' }
+    },
+    {
+      title: 'Stress Level Assessment',
+      description: 'PSS-10 perceived stress scale',
+      icon: '⚡',
+      url: '/screening/stress.html',
+      stats: { questions: 10, minutes: '4-5', rating: 'Stress' }
+    },
+    {
+      title: 'Anger Management Assessment',
+      description: 'STAXI-2 anger expression screening',
+      icon: '😡',
+      url: '/screening/anger.html',
+      stats: { questions: 10, minutes: '4-5', rating: 'Anger' }
+    },
+    {
+      title: 'Postpartum Depression',
+      description: 'EPDS for new mothers',
+      icon: '👶',
+      url: '/screening/postpartum-depression.html',
+      stats: { questions: 10, minutes: '4-6', rating: 'Maternal' }
+    },
+    {
+      title: 'Personality Disorder Screening',
+      description: 'PDQ-4 personality traits assessment',
+      icon: '🎭',
+      url: '/screening/personality-disorder.html',
+      stats: { questions: 15, minutes: '6-8', rating: 'Personality' }
+    },
+    {
+      title: 'Borderline Personality',
+      description: 'MSI-BPD borderline traits screening',
+      icon: '💔',
+      url: '/screening/borderline-personality.html',
+      stats: { questions: 10, minutes: '5-6', rating: 'BPD' }
+    },
+    {
+      title: 'Psychosis Risk Assessment',
+      description: 'PRIME early psychosis screening',
+      icon: '🌀',
+      url: '/screening/schizophrenia.html',
+      stats: { questions: 12, minutes: '5-7', rating: 'Psychosis' }
+    }
+  ];
 
   const startAssessment = (assessmentId: string) => {
     setCurrentAssessment(assessmentId);
@@ -644,75 +614,36 @@ const Screening = () => {
     let levelClass: string;
     let recommendations: string[];
     
-    if (currentAssessment === 'adhd') {
-      if (totalScore <= 8) {
-        level = 'Low likelihood of ADHD';
-        levelClass = 'bg-green-100 text-green-800 border-green-300';
-        recommendations = [
-          'Your responses suggest a low likelihood of ADHD',
-          'Continue monitoring your symptoms',
-          'Consider lifestyle factors that may affect attention',
-          'Consult Dr. Shapiro if symptoms worsen'
-        ];
-      } else if (totalScore <= 16) {
-        level = 'Moderate likelihood of ADHD';
-        levelClass = 'bg-yellow-100 text-yellow-800 border-yellow-300';
-        recommendations = [
-          'Your responses suggest possible ADHD symptoms',
-          'Consider scheduling an evaluation with Dr. Shapiro',
-          'Track your symptoms over the next few weeks',
-          'Discuss impact on work/school performance'
-        ];
-      } else {
-        level = 'High likelihood of ADHD';
-        levelClass = 'bg-red-100 text-red-800 border-red-300';
-        recommendations = [
-          'Your responses suggest significant ADHD symptoms',
-          'Strongly recommend evaluation with Dr. Shapiro',
-          'Consider how symptoms affect daily functioning',
-          'Treatment options may be beneficial'
-        ];
-      }
-    } else if (currentAssessment === 'depression') {
-      if (totalScore <= 4) {
-        level = 'Minimal depression symptoms';
-        levelClass = 'bg-green-100 text-green-800 border-green-300';
-      } else if (totalScore <= 9) {
-        level = 'Mild depression symptoms';
-        levelClass = 'bg-yellow-100 text-yellow-800 border-yellow-300';
-      } else if (totalScore <= 14) {
-        level = 'Moderate depression symptoms';
-        levelClass = 'bg-orange-100 text-orange-800 border-orange-300';
-      } else {
-        level = 'Severe depression symptoms';
-        levelClass = 'bg-red-100 text-red-800 border-red-300';
-      }
-      
+    // Basic scoring logic for demo purposes
+    const maxScore = assessments[currentAssessment].questions.length * 3;
+    const percentage = (totalScore / maxScore) * 100;
+    
+    if (percentage <= 30) {
+      level = 'Low concern level';
+      levelClass = 'bg-green-100 text-green-800 border-green-300';
       recommendations = [
-        'Consider discussing your mood with Dr. Shapiro',
-        'Monitor your symptoms over time',
-        'Engage in self-care activities',
-        'Reach out to support systems'
+        'Your responses suggest minimal symptoms',
+        'Continue practicing self-care',
+        'Monitor symptoms over time',
+        'Contact Dr. Shapiro if symptoms worsen'
+      ];
+    } else if (percentage <= 60) {
+      level = 'Moderate concern level';
+      levelClass = 'bg-yellow-100 text-yellow-800 border-yellow-300';
+      recommendations = [
+        'Your responses suggest moderate symptoms',
+        'Consider discussing with Dr. Shapiro',
+        'Monitor symptoms closely',
+        'Practice healthy coping strategies'
       ];
     } else {
-      const maxScore = assessments[currentAssessment].questions.length * 3;
-      const percentage = (totalScore / maxScore) * 100;
-      
-      if (percentage <= 30) {
-        level = 'Low concern level';
-        levelClass = 'bg-green-100 text-green-800 border-green-300';
-      } else if (percentage <= 60) {
-        level = 'Moderate concern level';
-        levelClass = 'bg-yellow-100 text-yellow-800 border-yellow-300';
-      } else {
-        level = 'High concern level';
-        levelClass = 'bg-red-100 text-red-800 border-red-300';
-      }
-      
+      level = 'High concern level';
+      levelClass = 'bg-red-100 text-red-800 border-red-300';
       recommendations = [
-        'Consider discussing results with Dr. Shapiro',
-        'Monitor your symptoms',
-        'Practice self-care strategies'
+        'Your responses suggest significant symptoms',
+        'Strongly recommend evaluation with Dr. Shapiro',
+        'Consider immediate professional support',
+        'Treatment options may be beneficial'
       ];
     }
     
@@ -829,24 +760,9 @@ const Screening = () => {
                 </ul>
               </div>
               
-              <div className="bg-blue-50 border-2 border-blue-200 p-6 rounded-lg mb-6">
-                <h4 className="font-semibold mb-3 flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-blue-600" />
-                  Your Privacy
-                </h4>
-                <p className="text-sm text-gray-700 mb-3">
-                  Based on your privacy preferences, {privacyPreference === 'anonymous' 
-                    ? 'your responses are not stored and remain completely anonymous' 
-                    : 'your data is handled according to your selected preferences'}.
-                </p>
-                <p className="text-sm text-gray-700">
-                  All screening data complies with HIPAA privacy regulations.
-                </p>
-              </div>
-              
               <div className="bg-orange-500 border-2 border-orange-300 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-white mb-4">Discuss Your Results with Dr. Shapiro</h3>
-                <p className="mb-4 text-orange-100">Get professional interpretation of your screening results and personalized treatment recommendations from Cincinnati's leading psychiatrist.</p>
+                <p className="mb-4 text-orange-100">Get professional interpretation of your screening results and personalized treatment recommendations.</p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Button className="bg-white text-orange-600 hover:bg-orange-50" asChild>
                     <a href="tel:859-341-7453" className="flex items-center gap-2">
@@ -859,10 +775,6 @@ const Screening = () => {
                       <Mail className="h-4 w-4" />
                       Email Dr. Shapiro
                     </a>
-                  </Button>
-                  <Button className="bg-white text-orange-600 hover:bg-orange-50 flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Schedule Consultation
                   </Button>
                 </div>
               </div>
@@ -994,115 +906,89 @@ const Screening = () => {
                 <h3 className="font-semibold text-blue-700 mb-3">Your Privacy is Protected</h3>
                 <p className="mb-4 text-gray-700">
                   <strong>HIPAA Compliance:</strong> All screening tools are completely confidential and comply with HIPAA privacy regulations. 
-                  No personal health information is stored without your explicit consent. You can complete assessments anonymously or choose to receive personalized follow-up.
+                  No personal health information is stored without your explicit consent.
                 </p>
-                
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div 
-                    className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                      privacyPreference === 'anonymous' 
-                        ? 'border-orange-500 bg-orange-50' 
-                        : 'border-gray-300 bg-white hover:border-orange-300'
-                    }`}
-                    onClick={() => setPrivacyPreference('anonymous')}
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      <input 
-                        type="radio" 
-                        name="privacy" 
-                        value="anonymous" 
-                        checked={privacyPreference === 'anonymous'}
-                        onChange={() => setPrivacyPreference('anonymous')}
-                        className="text-orange-600"
-                      />
-                      <strong className="text-blue-700">Anonymous Assessment</strong>
-                    </div>
-                    <small className="text-gray-600">No personal information collected</small>
-                  </div>
-                  
-                  <div 
-                    className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                      privacyPreference === 'results-only' 
-                        ? 'border-orange-500 bg-orange-50' 
-                        : 'border-gray-300 bg-white hover:border-orange-300'
-                    }`}
-                    onClick={() => setPrivacyPreference('results-only')}
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      <input 
-                        type="radio" 
-                        name="privacy" 
-                        value="results-only" 
-                        checked={privacyPreference === 'results-only'}
-                        onChange={() => setPrivacyPreference('results-only')}
-                        className="text-orange-600"
-                      />
-                      <strong className="text-blue-700">Results via Email</strong>
-                    </div>
-                    <small className="text-gray-600">Email address only for results</small>
-                  </div>
-                  
-                  <div 
-                    className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                      privacyPreference === 'consultation' 
-                        ? 'border-orange-500 bg-orange-50' 
-                        : 'border-gray-300 bg-white hover:border-orange-300'
-                    }`}
-                    onClick={() => setPrivacyPreference('consultation')}
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      <input 
-                        type="radio" 
-                        name="privacy" 
-                        value="consultation" 
-                        checked={privacyPreference === 'consultation'}
-                        onChange={() => setPrivacyPreference('consultation')}
-                        className="text-orange-600"
-                      />
-                      <strong className="text-blue-700">Consultation Follow-up</strong>
-                    </div>
-                    <small className="text-gray-600">Contact info for scheduling</small>
-                  </div>
-                </div>
               </AlertDescription>
             </Alert>
           </CardContent>
         </Card>
 
-        {/* Screening Tools Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {Object.entries(assessments).map(([key, assessment]) => (
-            <Card 
-              key={key} 
-              className="cursor-pointer hover:shadow-xl transition-all duration-300 border-2 border-blue-200 hover:border-orange-400 bg-white"
-              onClick={() => startAssessment(key)}
-            >
-              <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-t-lg">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="text-4xl bg-blue-600 text-white p-3 rounded-lg">{assessment.icon}</div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg mb-2 text-blue-700">{assessment.title}</CardTitle>
-                    <p className="text-gray-600 text-sm">{assessment.description}</p>
+        {/* Complete Screening Tools Grid - Now 18 tools! */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-center mb-6 text-blue-800">Complete Professional Assessments</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {externalScreenings.map((screening, index) => (
+              <Card 
+                key={index} 
+                className="cursor-pointer hover:shadow-xl transition-all duration-300 border-2 border-blue-200 hover:border-orange-400 bg-white"
+                onClick={() => window.open(screening.url, '_blank')}
+              >
+                <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-t-lg">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-4xl bg-blue-600 text-white p-3 rounded-lg">{screening.icon}</div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg mb-2 text-blue-700">{screening.title}</CardTitle>
+                      <p className="text-gray-600 text-sm">{screening.description}</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex justify-between text-center pt-4 border-t border-blue-200">
-                  <div>
-                    <div className="font-bold text-blue-600">{assessment.stats.questions}</div>
-                    <div className="text-xs text-gray-500">Questions</div>
+                  
+                  <div className="flex justify-between text-center pt-4 border-t border-blue-200">
+                    <div>
+                      <div className="font-bold text-blue-600">{screening.stats.questions}</div>
+                      <div className="text-xs text-gray-500">Questions</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-blue-600">{screening.stats.minutes}</div>
+                      <div className="text-xs text-gray-500">Minutes</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-orange-500">⭐⭐⭐⭐⭐</div>
+                      <div className="text-xs text-gray-500">{screening.stats.rating}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-bold text-blue-600">{assessment.stats.minutes}</div>
-                    <div className="text-xs text-gray-500">Minutes</div>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Interactive Demo Tools */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-center mb-6 text-blue-800">Quick Interactive Demos</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {Object.entries(assessments).map(([key, assessment]) => (
+              <Card 
+                key={key} 
+                className="cursor-pointer hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-blue-400 bg-white"
+                onClick={() => startAssessment(key)}
+              >
+                <CardHeader className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-lg">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-4xl bg-gray-600 text-white p-3 rounded-lg">{assessment.icon}</div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg mb-2 text-gray-700">{assessment.title}</CardTitle>
+                      <p className="text-gray-600 text-sm">{assessment.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-bold text-orange-500">⭐⭐⭐⭐⭐</div>
-                    <div className="text-xs text-gray-500">{assessment.stats.rating}</div>
+                  
+                  <div className="flex justify-between text-center pt-4 border-t border-gray-200">
+                    <div>
+                      <div className="font-bold text-gray-600">{assessment.stats.questions}</div>
+                      <div className="text-xs text-gray-500">Questions</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-600">{assessment.stats.minutes}</div>
+                      <div className="text-xs text-gray-500">Minutes</div>
+                    </div>
+                    <div>
+                      <div className="font-bold text-blue-500">Demo</div>
+                      <div className="text-xs text-gray-500">{assessment.stats.rating}</div>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-            </Card>
-          ))}
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
         </div>
         
         {/* Footer Disclaimer */}
