@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const pathname = location.pathname || '';
 
   return (
     <header className="bg-card shadow-soft sticky top-0 z-50">
@@ -49,55 +50,55 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Home
             </Link>
             <Link 
               to="/about" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/about' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/about' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               About Dr. Shapiro
             </Link>
             <Link 
               to="/services" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/services' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/services' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Services
             </Link>
             <Link 
               to="/disorders" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/disorders' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/disorders' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Disorders
             </Link>
-            <Link 
-              to="/about-conditions/" 
-              className={`text-foreground hover:text-primary transition-colors font-medium`}
+            <a 
+              href="/about-conditions/"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               📚 About Conditions
-            </Link>
+            </a>
             <Link 
               to="/screening" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/screening' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/screening' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               📋 Free Screening
             </Link>
             <Link 
               to="/contact" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/contact' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/contact' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Contact
             </Link>
             <Link 
               to="/forms" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/forms' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/forms' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Forms
             </Link>
             <Link 
               to="/patient-portal" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/patient-portal' ? 'text-primary border-b-2 border-primary' : ''}`}
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/patient-portal' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
               Patient Portal
             </Link>
@@ -126,63 +127,63 @@ const Header = () => {
             <div className="flex flex-col space-y-4 pt-4">
               <Link 
                 to="/" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/about" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/about' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/about' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Dr. Shapiro
               </Link>
               <Link 
                 to="/services" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/services' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/services' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 to="/disorders" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/disorders' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/disorders' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Disorders
               </Link>
               <a 
                 href="/about-conditions/"
-                className={`text-foreground hover:text-primary transition-colors font-medium`}
+                className="text-foreground hover:text-primary transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Conditions
-              </Link>
+              </a>
               <Link 
                 to="/screening" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/screening' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/screening' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Free Screening
               </Link>
               <Link 
                 to="/contact" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/contact' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/contact' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link 
                 to="/forms" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/forms' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/forms' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Forms
               </Link>
               <Link 
                 to="/patient-portal" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${(location.pathname || '') === '/patient-portal' ? 'text-primary font-bold' : ''}`}
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/patient-portal' ? 'text-primary font-bold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Patient Portal
