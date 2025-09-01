@@ -86,13 +86,21 @@ export default function AdhdEducation() {
         </div>
         
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">ADHD Education Slides</h1>
+          <h1 className="text-4xl font-bold mb-4">Mental Health Education Slideshows</h1>
           <p className="text-muted-foreground mb-6">
-            Comprehensive educational materials about ADHD from Dr. Arnold G. Shapiro
+            Comprehensive educational materials about mental health conditions from Dr. Arnold G. Shapiro
           </p>
-          <p className="text-sm text-muted-foreground mb-4">
-            Click any slide to view in presentation mode. Use arrow keys or buttons to navigate.
-          </p>
+          
+          {/* Crystal clear but subtle directions */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 max-w-2xl mx-auto">
+            <p className="text-sm text-blue-800 font-medium mb-2">📖 How to Use:</p>
+            <div className="text-sm text-blue-700 space-y-1">
+              <p>• Click any slide thumbnail to start presentation mode</p>
+              <p>• Click slide or → arrow to go to next slide</p>
+              <p>• Press ESC or click X to exit presentation</p>
+            </div>
+          </div>
+          
           <Button asChild className="mb-4">
             <a 
               href="/about-conditions/adhd/ADHD-Education.pdf" 
@@ -100,12 +108,66 @@ export default function AdhdEducation() {
               className="flex items-center gap-2"
             >
               <Download className="h-4 w-4" />
-              Download Complete ADHD Education PDF
+              Download ADHD Education PDF
             </a>
           </Button>
         </div>
 
+        {/* Condition Tabs */}
+        <div className="mb-8">
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            <Button 
+              variant="default" 
+              className="bg-primary text-primary-foreground"
+            >
+              ADHD (20 slides)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Anxiety (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Depression (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Bipolar (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              PTSD (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              OCD (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Autism (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Eating Disorders (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Substance Use (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Sleep Disorders (Coming Soon)
+            </Button>
+            <Button variant="outline" disabled className="opacity-50">
+              Personality (Coming Soon)
+            </Button>
+          </div>
+          
+          {/* Instructions for adding more slideshows */}
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-4xl mx-auto">
+            <p className="text-sm text-amber-800 font-medium mb-2">📁 How to Add Slides for Other Conditions:</p>
+            <div className="text-sm text-amber-700 space-y-1">
+              <p>1. Create folder: <code className="bg-amber-100 px-1 rounded">/public/about-conditions/[condition]/</code></p>
+              <p>2. Add slide images: <code className="bg-amber-100 px-1 rounded">[condition]-slide-01.png.PNG, [condition]-slide-02.png.PNG</code>, etc.</p>
+              <p>3. The system will automatically detect and display them</p>
+              <p><strong>Example:</strong> For anxiety slides, create <code className="bg-amber-100 px-1 rounded">/public/about-conditions/anxiety/anxiety-slide-01.png.PNG</code></p>
+            </div>
+          </div>
+        </div>
+
         {/* Slide Grid */}
+        <h2 className="text-2xl font-bold text-center mb-6">ADHD Education Slides</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {validImages.map((src, idx) => (
             <div 
@@ -124,6 +186,9 @@ export default function AdhdEducation() {
               </div>
               <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs">
                 Slide {idx + 1}
+              </div>
+              <div className="absolute top-2 right-2 bg-blue-600/90 text-white px-2 py-1 rounded text-xs">
+                Click to present
               </div>
             </div>
           ))}

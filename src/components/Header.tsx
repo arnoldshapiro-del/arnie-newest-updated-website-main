@@ -79,10 +79,10 @@ const Header = () => {
               📋 Free Screening
             </Link>
             <Link 
-              to="/education/adhd" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/education/adhd' ? 'text-primary border-b-2 border-primary' : ''}`}
+              to="/slideshows" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/slideshows' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
-              📚 ADHD Education
+              📊 Slideshows
             </Link>
             <Link 
               to="/contact" 
