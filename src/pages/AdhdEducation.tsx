@@ -9,8 +9,8 @@ const generateCandidateImages = (condition: string) => {
   for (let i = 1; i <= 30; i++) {
     const n = String(i).padStart(2, "0");
     candidates.push(`/about-conditions/${condition}/${condition}-slide-${n}.png.PNG`);
+    candidates.push(`/about-conditions/${condition}/Slide${i}.PNG`);
     candidates.push(`/education-assets/${condition}/${condition.toUpperCase()}${n}.png`);
-    candidates.push(`/education-assets/${condition}/${condition}-slide-${n}.png`);
   }
   return candidates;
 };
@@ -48,17 +48,16 @@ export default function AdhdEducation() {
 
   const conditions = [
     { id: 'adhd', name: 'ADHD', icon: '🧠' },
-    { id: 'anxiety', name: 'Anxiety', icon: '😰' },
-    { id: 'depression', name: 'Depression', icon: '🌧️' },
-    { id: 'bipolar', name: 'Bipolar', icon: '🎭' },
-    { id: 'ptsd', name: 'PTSD', icon: '🛡️' },
-    { id: 'ocd', name: 'OCD', icon: '🔄' },
-    { id: 'autism', name: 'Autism', icon: '🧩' },
-    { id: 'eating-disorder', name: 'Eating Disorders', icon: '🍽️' },
-    { id: 'substance-abuse', name: 'Substance Use', icon: '🚫' },
-    { id: 'cannabis', name: 'Cannabis Use', icon: '🌿' },
-    { id: 'sleep-disorder', name: 'Sleep Disorders', icon: '😴' },
-    { id: 'personality', name: 'Personality', icon: '🎭' }
+    { id: 'cannabis-use-disorder', name: 'Cannabis Use Disorder', icon: '🌿' },
+    { id: 'childhood-bipolar-disorder', name: 'Childhood Bipolar Disorder', icon: '🎭' },
+    { id: 'major-depressive-disorder', name: 'Major Depressive Disorder', icon: '🌧️' },
+    { id: 'childhood-gad', name: 'Childhood Generalized Anxiety Disorder GAD', icon: '😰' },
+    { id: 'substance-use-disorder', name: 'Substance Use Disorder', icon: '🚫' },
+    { id: 'alcohol-use-disorder', name: 'Alcohol Use Disorder', icon: '🍺' },
+    { id: 'ocd', name: 'Obsessive Compulsive Disorder OCD', icon: '🔄' },
+    { id: 'panic-disorder', name: 'Panic Disorder', icon: '💨' },
+    { id: 'generalized-anxiety-disorder', name: 'Generalized Anxiety Disorder GAD', icon: '😟' },
+    { id: 'autism', name: 'Autism Spectrum Disorder', icon: '🧩' }
   ];
   const openSlide = (index: number) => {
     setCurrentSlide(index);
