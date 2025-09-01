@@ -56,6 +56,7 @@ export default function AdhdEducation() {
     { id: 'autism', name: 'Autism', icon: '🧩' },
     { id: 'eating-disorder', name: 'Eating Disorders', icon: '🍽️' },
     { id: 'substance-abuse', name: 'Substance Use', icon: '🚫' },
+    { id: 'cannabis', name: 'Cannabis Use', icon: '🌿' },
     { id: 'sleep-disorder', name: 'Sleep Disorders', icon: '😴' },
     { id: 'personality', name: 'Personality', icon: '🎭' }
   ];
