@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/forms" element={<Forms />} />
           <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/screening" element={<Screening />} />
-          <Route path="/education/adhd" element={<AdhdEducation />} />
+          <Route path="/slideshows" element={<AdhdEducation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
