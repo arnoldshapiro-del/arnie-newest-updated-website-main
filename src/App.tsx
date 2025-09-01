@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Forms from "./pages/Forms";
 import PatientPortal from "./pages/PatientPortal";
 import Screening from "./pages/Screening";
+import Slideshows from "./pages/Slideshows";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/forms" element={<Forms />} />
           <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/screening" element={<Screening />} />
+          <Route path="/slideshows" element={<Slideshows />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

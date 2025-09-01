@@ -79,6 +79,12 @@ const Header = () => {
               📋 Free Screening
             </Link>
             <Link 
+              to="/slideshows" 
+              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/slideshows' ? 'text-primary border-b-2 border-primary' : ''}`}
+            >
+              📊 Slideshows
+            </Link>
+            <Link 
               to="/contact" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/contact' ? 'text-primary border-b-2 border-primary' : ''}`}
             >
@@ -153,6 +159,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Free Screening
+              </Link>
+              <Link 
+                to="/slideshows" 
+                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/slideshows' ? 'text-primary font-bold' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Slideshows
               </Link>
               <Link 
                 to="/contact" 
