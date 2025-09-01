@@ -3,25 +3,26 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Download, ChevronLeft, ChevronRight, X, Maximize } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Try both naming patterns up to 30 slides
-const generateCandidateImages = () => {
+// Generate candidate images for any condition
+const generateCandidateImages = (condition: string) => {
   const candidates = [];
   for (let i = 1; i <= 30; i++) {
     const n = String(i).padStart(2, "0");
-    candidates.push(`/about-conditions/adhd/adhd-slide-${n}.png.PNG`);
-    candidates.push(`/education-assets/adhd/ADHD${n}.png`);
-    candidates.push(`/education-assets/adhd/adhd-slide-${n}.png`);
+    candidates.push(`/about-conditions/${condition}/${condition}-slide-${n}.png.PNG`);
+    candidates.push(`/education-assets/${condition}/${condition.toUpperCase()}${n}.png`);
+    candidates.push(`/education-assets/${condition}/${condition}-slide-${n}.png`);
   }
   return candidates;
 };
 
 export default function AdhdEducation() {
+  const [currentCondition, setCurrentCondition] = useState('adhd');
   const [validImages, setValidImages] = useState<string[]>([]);
   const [currentSlide, setCurrentSlide] = useState<number | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   
   useEffect(() => {
-    const candidates = generateCandidateImages();
+    const candidates = generateCandidateImages(currentCondition);
     const imagePromises = candidates.map(src => 
       new Promise<string | null>((resolve) => {
         const img = new Image();
@@ -43,8 +44,21 @@ export default function AdhdEducation() {
       });
       setValidImages(unique);
     });
-  }, []);
+  }, [currentCondition]);
 
+  const conditions = [
+    { id: 'adhd', name: 'ADHD', icon: '🧠' },
+    { id: 'anxiety', name: 'Anxiety', icon: '😰' },
+    { id: 'depression', name: 'Depression', icon: '🌧️' },
+    { id: 'bipolar', name: 'Bipolar', icon: '🎭' },
+    { id: 'ptsd', name: 'PTSD', icon: '🛡️' },
+    { id: 'ocd', name: 'OCD', icon: '🔄' },
+    { id: 'autism', name: 'Autism', icon: '🧩' },
+    { id: 'eating-disorder', name: 'Eating Disorders', icon: '🍽️' },
+    { id: 'substance-abuse', name: 'Substance Use', icon: '🚫' },
+    { id: 'sleep-disorder', name: 'Sleep Disorders', icon: '😴' },
+    { id: 'personality', name: 'Personality', icon: '🎭' }
+  ];
   const openSlide = (index: number) => {
     setCurrentSlide(index);
     setIsFullscreen(true);
@@ -103,71 +117,49 @@ export default function AdhdEducation() {
           
           <Button asChild className="mb-4">
             <a 
-              href="/about-conditions/adhd/ADHD-Education.pdf" 
-              download="ADHD-Education-Dr-Shapiro.pdf"
+              href={`/about-conditions/${currentCondition}/${currentCondition.toUpperCase()}-Education.pdf`} 
+              download={`${currentCondition.toUpperCase()}-Education-Dr-Shapiro.pdf`}
               className="flex items-center gap-2"
             >
               <Download className="h-4 w-4" />
-              Download ADHD Education PDF
+              Download {conditions.find(c => c.id === currentCondition)?.name} Education PDF
             </a>
           </Button>
         </div>
 
-        {/* Condition Tabs */}
+        {/* Working Condition Tabs */}
         <div className="mb-8">
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            <Button 
-              variant="default" 
-              className="bg-primary text-primary-foreground"
-            >
-              ADHD (20 slides)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Anxiety (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Depression (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Bipolar (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              PTSD (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              OCD (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Autism (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Eating Disorders (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Substance Use (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Sleep Disorders (Coming Soon)
-            </Button>
-            <Button variant="outline" disabled className="opacity-50">
-              Personality (Coming Soon)
-            </Button>
+            {conditions.map((condition) => (
+              <Button
+                key={condition.id}
+                variant={currentCondition === condition.id ? "default" : "outline"}
+                onClick={() => setCurrentCondition(condition.id)}
+                className={currentCondition === condition.id ? "bg-primary text-primary-foreground" : ""}
+              >
+                {condition.icon} {condition.name}
+              </Button>
+            ))}
           </div>
           
-          {/* Instructions for adding more slideshows */}
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-4xl mx-auto">
-            <p className="text-sm text-amber-800 font-medium mb-2">📁 How to Add Slides for Other Conditions:</p>
-            <div className="text-sm text-amber-700 space-y-1">
-              <p>1. Create folder: <code className="bg-amber-100 px-1 rounded">/public/about-conditions/[condition]/</code></p>
-              <p>2. Add slide images: <code className="bg-amber-100 px-1 rounded">[condition]-slide-01.png.PNG, [condition]-slide-02.png.PNG</code>, etc.</p>
-              <p>3. The system will automatically detect and display them</p>
-              <p><strong>Example:</strong> For anxiety slides, create <code className="bg-amber-100 px-1 rounded">/public/about-conditions/anxiety/anxiety-slide-01.png.PNG</code></p>
+          {validImages.length === 0 && (
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-4xl mx-auto">
+              <p className="text-sm text-amber-800 font-medium mb-2">📁 No slides found for {conditions.find(c => c.id === currentCondition)?.name}</p>
+              <div className="text-sm text-amber-700 space-y-1">
+                <p><strong>To add slides:</strong></p>
+                <p>1. Create folder: <code className="bg-amber-100 px-1 rounded">/public/about-conditions/{currentCondition}/</code></p>
+                <p>2. Add slide images: <code className="bg-amber-100 px-1 rounded">{currentCondition}-slide-01.png.PNG, {currentCondition}-slide-02.png.PNG</code>, etc.</p>
+                <p>3. Add PDF: <code className="bg-amber-100 px-1 rounded">{currentCondition.toUpperCase()}-Education.pdf</code></p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Slide Grid */}
-        <h2 className="text-2xl font-bold text-center mb-6">ADHD Education Slides</h2>
+        <h2 className="text-2xl font-bold text-center mb-6">
+          {conditions.find(c => c.id === currentCondition)?.icon} {conditions.find(c => c.id === currentCondition)?.name} Education Slides
+          {validImages.length > 0 && <span className="text-muted-foreground ml-2">({validImages.length} slides)</span>}
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {validImages.map((src, idx) => (
             <div 
@@ -177,7 +169,7 @@ export default function AdhdEducation() {
             >
               <img 
                 src={src} 
-                alt={`ADHD Education Slide ${idx + 1}`} 
+                alt={`${conditions.find(c => c.id === currentCondition)?.name} Education Slide ${idx + 1}`} 
                 loading="lazy" 
                 className="w-full h-auto"
               />
@@ -250,7 +242,7 @@ export default function AdhdEducation() {
             <div className="w-full h-full flex items-center justify-center p-8">
               <img 
                 src={validImages[currentSlide]} 
-                alt={`ADHD Education Slide ${currentSlide + 1}`}
+                alt={`${conditions.find(c => c.id === currentCondition)?.name} Education Slide ${currentSlide + 1}`}
                 className="max-w-full max-h-full object-contain"
                 onClick={nextSlide}
               />
