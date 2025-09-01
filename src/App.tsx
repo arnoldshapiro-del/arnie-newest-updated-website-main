@@ -33,7 +33,12 @@ const App = () => (
           <Route path="/forms" element={<Forms />} />
           <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/screening" element={<Screening />} />
-          <Route path="/about-conditions/" element={<Navigate to="/about-conditions/index.html" replace />} />
+          <Route path="/about-conditions" element={<Navigate to="/" replace />} />
+          <Route path="/about-conditions/*" element={<Navigate to="/" replace />} />
+          <Route path="/conditions" element={<Navigate to="/" replace />} />
+          <Route path="/conditions/*" element={<Navigate to="/" replace />} />
+          <Route path="/education" element={<Navigate to="/" replace />} />
+          <Route path="/education/*" element={<Navigate to="/" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
