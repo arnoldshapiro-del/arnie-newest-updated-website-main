@@ -83,34 +83,24 @@ export default function AdhdEducation() {
           </Button>
         </div>
 
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-        gap: "20px",
-        alignItems: "start"
-      }}>
-        {validImages.map((src, idx) => (
-          <img 
-            key={src} 
-            src={src} 
-            alt={`ADHD Education Slide ${idx + 1}`} 
-            loading="lazy" 
-            style={{ 
-              width: "100%", 
-              height: "auto", 
-              borderRadius: "8px",
-              boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
-            }}
-          />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {validImages.map((src, idx) => (
+            <img 
+              key={src} 
+              src={src} 
+              alt={`ADHD Education Slide ${idx + 1}`} 
+              loading="lazy" 
+              className="w-full h-auto rounded-lg shadow-md"
+            />
+          ))}
+        </div>
         
-      <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg">
-        <p className="text-muted-foreground text-sm">
-          <strong>Disclaimer:</strong> This educational material is for informational purposes only and does not constitute medical advice. 
-          Please consult with Dr. Arnold G. Shapiro or another qualified healthcare provider for proper evaluation and treatment.
-        </p>
-      </div>
+        <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg">
+          <p className="text-muted-foreground text-sm">
+            <strong>Disclaimer:</strong> This educational material is for informational purposes only and does not constitute medical advice. 
+            Please consult with Dr. Arnold G. Shapiro or another qualified healthcare provider for proper evaluation and treatment.
+          </p>
+        </div>
       </div>
     </main>
   );
