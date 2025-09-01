@@ -14,6 +14,11 @@
 +  const candidates = [];
 +  for (let i = 1; i <= 30; i++) {
 +    const n = String(i).padStart(2, "0");
+    candidates.push(`/about-conditions/adhd/adhd-slide-${n}.png.PNG`);
+    candidates.push(`/education-assets/adhd/ADHD${n}.png`);
+  }
+  return candidates;
+};
 +    candidates.push(`/education-assets/adhd/adhd-slide-${n}.png`);
 +    candidates.push(`/education-assets/adhd/ADHD${n}.png`);
 +  }
@@ -69,6 +74,16 @@
 +          </p>
 +          <Button asChild className="mb-4">
 +            <a 
+              href="/about-conditions/adhd/ADHD-Education.pdf" 
+              download
+              className="flex items-center gap-2"
+            >
+              <Download className="h-4 w-4" />
+              Download the Full ADHD PDF
+            </a>
+          </Button>
+        </div>
+
 +              href="/education-assets/adhd/ADHD-Education.pdf" 
 +              download
 +              className="flex items-center gap-2"
