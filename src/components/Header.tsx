@@ -72,12 +72,6 @@ const Header = () => {
             >
               Disorders
             </Link>
-            <a 
-              href="/about-conditions/"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              📚 About Conditions
-            </a>
             <Link 
               to="/screening" 
               className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/screening' ? 'text-primary border-b-2 border-primary' : ''}`}
@@ -153,13 +147,6 @@ const Header = () => {
               >
                 Disorders
               </Link>
-              <a 
-                href="/about-conditions/"
-                className="text-foreground hover:text-primary transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About Conditions
-              </a>
               <Link 
                 to="/screening" 
                 className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/screening' ? 'text-primary font-bold' : ''}`}
