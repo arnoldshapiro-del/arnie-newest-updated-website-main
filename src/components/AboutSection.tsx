@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Award, Heart, Users, BookOpen, Clock } from "lucide-react";
-import doctorProfile from "@/assets/doctor-profile-new.jpg";
 
 const AboutSection = () => {
   return (
@@ -15,7 +14,7 @@ const AboutSection = () => {
               <div className="w-full max-w-md mx-auto">
                 <div className="relative rounded-2xl overflow-hidden shadow-large">
                   <img 
-                    src={doctorProfile} 
+                    src="/assets/doctor-profile-new.jpg" 
                     alt="Dr. Arnold G. Shapiro - Experienced Psychiatrist" 
                     className="w-full h-auto object-cover"
                   />

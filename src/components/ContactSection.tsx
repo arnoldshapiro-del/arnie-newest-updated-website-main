@@ -12,7 +12,6 @@ import {
   Star,
   Quote
 } from "lucide-react";
-import patientSuccess from "@/assets/patient-success.jpg";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -178,7 +177,7 @@ const ContactSection = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-large">
                 <img 
-                  src={patientSuccess} 
+                  src="/assets/patient-success.jpg" 
                   alt="Happy patients showing successful treatment outcomes" 
                   className="w-full h-auto object-cover"
                 />
