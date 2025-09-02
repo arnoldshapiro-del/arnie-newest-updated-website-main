@@ -31,15 +31,7 @@ export default function AdhdEducation() {
     
     Promise.all(imagePromises).then(results => {
       const valid = results.filter(Boolean) as string[];
-      // Remove duplicates and sort by slide number
-      const unique = Array.from(new Set(valid)).sort((a, b) => {
-        const getNum = (path: string) => {
-          const match = path.match(/Slide(\d+)\.PNG/i);
-          return match ? parseInt(match[1]) : 0;
-        };
-        return getNum(a) - getNum(b);
-      });
-      setValidImages(unique);
+      setValidImages(valid);
     });
   }, [currentCondition]);
 
