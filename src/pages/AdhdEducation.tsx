@@ -6,11 +6,8 @@ import { Link } from "react-router-dom";
 // Generate candidate images for any condition
 const generateCandidateImages = (condition: string) => {
   const candidates = [];
-  for (let i = 1; i <= 30; i++) {
-    const n = String(i).padStart(2, "0");
-    candidates.push(`/about-conditions/${condition}/${condition}-slide-${n}.png.PNG`);
+  for (let i = 1; i <= 50; i++) {
     candidates.push(`/about-conditions/${condition}/Slide${i}.PNG`);
-    candidates.push(`/education-assets/${condition}/${condition.toUpperCase()}${n}.png`);
   }
   return candidates;
 };
@@ -37,7 +34,7 @@ export default function AdhdEducation() {
       // Remove duplicates and sort by slide number
       const unique = Array.from(new Set(valid)).sort((a, b) => {
         const getNum = (path: string) => {
-          const match = path.match(/(\d+)\.png/i);
+          const match = path.match(/Slide(\d+)\.PNG/i);
           return match ? parseInt(match[1]) : 0;
         };
         return getNum(a) - getNum(b);
@@ -48,17 +45,27 @@ export default function AdhdEducation() {
 
   const conditions = [
     { id: 'adhd', name: 'ADHD', icon: '🧠' },
-    { id: 'cannabis-use-disorder', name: 'Cannabis Use Disorder', icon: '🌿' },
-    { id: 'childhood-bipolar-disorder', name: 'Childhood Bipolar Disorder', icon: '🎭' },
-    { id: 'major-depressive-disorder', name: 'Major Depressive Disorder', icon: '🌧️' },
-    { id: 'childhood-gad', name: 'Childhood Generalized Anxiety Disorder GAD', icon: '😰' },
-    { id: 'substance-use-disorder', name: 'Substance Use Disorder', icon: '🚫' },
-    { id: 'alcohol-use-disorder', name: 'Alcohol Use Disorder', icon: '🍺' },
-    { id: 'ocd', name: 'Obsessive Compulsive Disorder OCD', icon: '🔄' },
+    { id: 'Generalized-Anxiety-Disorder', name: 'Generalized Anxiety Disorder', icon: '😟' },
+    { id: 'Autism Spectrum Disorder', name: 'Autism Spectrum Disorder', icon: '🧩' },
+    { id: 'PTSD', name: 'PTSD', icon: '🛡️' },
+    { id: 'ocd', name: 'OCD', icon: '🔄' },
     { id: 'panic-disorder', name: 'Panic Disorder', icon: '💨' },
-    { id: 'generalized-anxiety-disorder', name: 'Generalized Anxiety Disorder GAD', icon: '😟' },
-    { id: 'autism', name: 'Autism Spectrum Disorder', icon: '🧩' }
+    { id: 'Sleep Disorders', name: 'Sleep Disorders', icon: '😴' },
+    { id: 'Eating Disorders', name: 'Eating Disorders', icon: '🍽️' },
+    { id: 'alcohol-use-disorder', name: 'Alcohol Use Disorder', icon: '🍺' },
+    { id: 'cannabis-use-disorder', name: 'Cannabis Use Disorder', icon: '🌿' },
+    { id: 'substance-use-disorder', name: 'Substance Use Disorder', icon: '🚫' },
+    { id: 'Opioid-Use-Disorder', name: 'Opioid Use Disorder', icon: '💊' },
+    { id: 'major-depressive-disorder', name: 'Major Depressive Disorder', icon: '🌧️' },
+    { id: 'childhood-bipolar-disorder', name: 'Childhood Bipolar Disorder', icon: '🎭' },
+    { id: 'Personality-Disorders', name: 'Personality Disorders', icon: '🎭' },
+    { id: 'Antisocial-Personality-Disorder', name: 'Antisocial Personality Disorder', icon: '⚡' },
+    { id: 'Borderline-Personality-Disorder', name: 'Borderline Personality Disorder', icon: '💔' },
+    { id: 'Narcissistic-Personality-Disorder', name: 'Narcissistic Personality Disorder', icon: '👑' },
+    { id: 'Social-Anxiety-Disorder', name: 'Social Anxiety Disorder', icon: '👥' },
+    { id: 'Pediatric-Generalized-Anxiety-Disorder-GAD', name: 'Childhood GAD', icon: '😰' }
   ];
+
   const openSlide = (index: number) => {
     setCurrentSlide(index);
     setIsFullscreen(true);
@@ -117,8 +124,8 @@ export default function AdhdEducation() {
           
           <Button asChild className="mb-4">
             <a 
-              href={`/about-conditions/${currentCondition}/${currentCondition.toUpperCase()}-Education.pdf`} 
-              download={`${currentCondition.toUpperCase()}-Education-Dr-Shapiro.pdf`}
+              href={`/about-conditions/${currentCondition}/${conditions.find(c => c.id === currentCondition)?.name}.pdf`} 
+              download={`${conditions.find(c => c.id === currentCondition)?.name.replace(/\s+/g, '-')}-Education-Dr-Shapiro.pdf`}
               className="flex items-center gap-2"
             >
               <Download className="h-4 w-4" />
@@ -148,8 +155,8 @@ export default function AdhdEducation() {
               <div className="text-sm text-amber-700 space-y-1">
                 <p><strong>To add slides:</strong></p>
                 <p>1. Create folder: <code className="bg-amber-100 px-1 rounded">/public/about-conditions/{currentCondition}/</code></p>
-                <p>2. Add slide images: <code className="bg-amber-100 px-1 rounded">{currentCondition}-slide-01.png.PNG, {currentCondition}-slide-02.png.PNG</code>, etc.</p>
-                <p>3. Add PDF: <code className="bg-amber-100 px-1 rounded">{currentCondition.toUpperCase()}-Education.pdf</code></p>
+                <p>2. Add slide images: <code className="bg-amber-100 px-1 rounded">Slide1.PNG, Slide2.PNG</code>, etc.</p>
+                <p>3. Add PDF: <code className="bg-amber-100 px-1 rounded">{conditions.find(c => c.id === currentCondition)?.name}.pdf</code></p>
               </div>
             </div>
           )}
