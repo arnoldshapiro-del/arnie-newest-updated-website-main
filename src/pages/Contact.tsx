@@ -105,25 +105,143 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <div>
+            <h2 className="text-2xl font-bold mb-6">Schedule Your Evaluation</h2>
+            <Card>
+              <CardContent className="p-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="name">Full Name *</Label>
+                      <Input
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="email">Email Address *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="serviceType">Service Needed</Label>
+                      <Select onValueChange={(value) => setFormData({ ...formData, serviceType: value })}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="individual">Individual Therapy</SelectItem>
+                          <SelectItem value="couples">Couples Therapy</SelectItem>
+                          <SelectItem value="family">Family Therapy</SelectItem>
+                          <SelectItem value="medication">Medication Management</SelectItem>
+                          <SelectItem value="evaluation">Psychiatric Evaluation</SelectItem>
+                          <SelectItem value="other">Other/Not Sure</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="preferredContact">Preferred Contact Method</Label>
+                      <Select onValueChange={(value) => setFormData({ ...formData, preferredContact: value })}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="How should we contact you?" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="phone">Phone Call (Preferred)</SelectItem>
+                          <SelectItem value="text">Text Message</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label htmlFor="urgency">Urgency Level</Label>
+                      <Select 
+                        value={formData.urgency}
+                        onValueChange={(value) => setFormData({ ...formData, urgency: value })}
+                      >
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="routine">Routine (1-2 weeks)</SelectItem>
+                          <SelectItem value="urgent">Urgent (Within 3 days)</SelectItem>
+                          <SelectItem value="crisis">Crisis (Same day)</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="message">Tell us how we can help</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Briefly describe your concerns or what you're looking for..."
+                      className="min-h-[100px]"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="bg-muted/50 p-4 rounded-lg">
+                    <div className="flex items-start gap-3">
+                      <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div className="text-sm">
+                        <p className="font-semibold mb-1">Your Privacy is Protected</p>
+                        <p className="text-muted-foreground">
+                          All information is confidential and HIPAA compliant. We'll never share 
+                          your personal information without your consent.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Button type="submit" className="w-full" size="lg">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Request Consultation
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Contact Information */}
-          <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-center mb-8">Contact Information</h2>
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold">Contact Information</h2>
 
             {/* Contact Methods */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
+                <Card key={index}>
+                  <CardContent className="p-4">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <info.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-bold text-lg mb-2">{info.title}</h3>
-                        <p className="text-base font-semibold text-primary mb-1">{info.primary}</p>
+                      <info.icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="font-semibold">{info.title}</h3>
+                        <p className="text-sm font-medium">{info.primary}</p>
                         <p className="text-sm text-muted-foreground">{info.secondary}</p>
-                        <p className="text-sm text-muted-foreground mt-1">{info.description}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{info.description}</p>
                       </div>
                     </div>
                   </CardContent>

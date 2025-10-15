@@ -17,10 +17,13 @@ export default function AdhdEducation() {
   const [validImages, setValidImages] = useState<string[]>([]);
   const [currentSlide, setCurrentSlide] = useState<number | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    setIsLoading(true);
+    setValidImages([]);
     const candidates = generateCandidateImages(currentCondition);
-    const imagePromises = candidates.map(src => 
+    const imagePromises = candidates.map(src =>
       new Promise<string | null>((resolve) => {
         const img = new Image();
         img.onload = () => resolve(src);
@@ -28,34 +31,33 @@ export default function AdhdEducation() {
         img.src = src;
       })
     );
-    
+
     Promise.all(imagePromises).then(results => {
       const valid = results.filter(Boolean) as string[];
       setValidImages(valid);
+      setIsLoading(false);
     });
   }, [currentCondition]);
 
   const conditions = [
     { id: 'adhd', name: 'ADHD', icon: '🧠' },
-    { id: 'Generalized-Anxiety-Disorder', name: 'Generalized Anxiety Disorder', icon: '😟' },
-    { id: 'Autism Spectrum Disorder', name: 'Autism Spectrum Disorder', icon: '🧩' },
-    { id: 'PTSD', name: 'PTSD', icon: '🛡️' },
+    { id: 'anxiety', name: 'Anxiety', icon: '😟' },
+    { id: 'autism', name: 'Autism Spectrum Disorder', icon: '🧩' },
+    { id: 'ptsd', name: 'PTSD', icon: '🛡️' },
     { id: 'ocd', name: 'OCD', icon: '🔄' },
     { id: 'panic-disorder', name: 'Panic Disorder', icon: '💨' },
-    { id: 'Sleep Disorders', name: 'Sleep Disorders', icon: '😴' },
-    { id: 'Eating Disorders', name: 'Eating Disorders', icon: '🍽️' },
-    { id: 'alcohol-use-disorder', name: 'Alcohol Use Disorder', icon: '🍺' },
-    { id: 'cannabis-use-disorder', name: 'Cannabis Use Disorder', icon: '🌿' },
-    { id: 'substance-use-disorder', name: 'Substance Use Disorder', icon: '🚫' },
-    { id: 'Opioid-Use-Disorder', name: 'Opioid Use Disorder', icon: '💊' },
-    { id: 'major-depressive-disorder', name: 'Major Depressive Disorder', icon: '🌧️' },
-    { id: 'childhood-bipolar-disorder', name: 'Childhood Bipolar Disorder', icon: '🎭' },
-    { id: 'Personality-Disorders', name: 'Personality Disorders', icon: '🎭' },
-    { id: 'Antisocial-Personality-Disorder', name: 'Antisocial Personality Disorder', icon: '⚡' },
-    { id: 'Borderline-Personality-Disorder', name: 'Borderline Personality Disorder', icon: '💔' },
-    { id: 'Narcissistic-Personality-Disorder', name: 'Narcissistic Personality Disorder', icon: '👑' },
-    { id: 'Social-Anxiety-Disorder', name: 'Social Anxiety Disorder', icon: '👥' },
-    { id: 'Pediatric-Generalized-Anxiety-Disorder-GAD', name: 'Childhood GAD', icon: '😰' }
+    { id: 'sleep-disorder', name: 'Sleep Disorders', icon: '😴' },
+    { id: 'eating-disorder', name: 'Eating Disorders', icon: '🍽️' },
+    { id: 'substance-abuse', name: 'Substance Use Disorder', icon: '🚫' },
+    { id: 'depression', name: 'Depression', icon: '🌧️' },
+    { id: 'bipolar', name: 'Bipolar Disorder', icon: '🎭' },
+    { id: 'personality-disorder', name: 'Personality Disorders', icon: '🎭' },
+    { id: 'borderline-personality', name: 'Borderline Personality Disorder', icon: '💔' },
+    { id: 'social-anxiety-disorder', name: 'Social Anxiety Disorder', icon: '👥' },
+    { id: 'social-anxiety', name: 'Social Anxiety', icon: '👥' },
+    { id: 'stress', name: 'Stress', icon: '😓' },
+    { id: 'anger', name: 'Anger', icon: '😡' },
+    { id: 'postpartum-depression', name: 'Postpartum Depression', icon: '🤱' }
   ];
 
   const openSlide = (index: number) => {
@@ -141,15 +143,17 @@ export default function AdhdEducation() {
             ))}
           </div>
           
-          {validImages.length === 0 && (
+          {!isLoading && validImages.length === 0 && (
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 max-w-4xl mx-auto">
-              <p className="text-sm text-amber-800 font-medium mb-2">📁 No slides found for {conditions.find(c => c.id === currentCondition)?.name}</p>
+              <p className="text-sm text-amber-800 font-medium mb-2">📁 No slides available yet for {conditions.find(c => c.id === currentCondition)?.name}</p>
               <div className="text-sm text-amber-700 space-y-1">
-                <p><strong>To add slides:</strong></p>
-                <p>1. Create folder: <code className="bg-amber-100 px-1 rounded">/public/about-conditions/{currentCondition}/</code></p>
-                <p>2. Add slide images: <code className="bg-amber-100 px-1 rounded">Slide1.PNG, Slide2.PNG</code>, etc.</p>
-                <p>3. Add PDF: <code className="bg-amber-100 px-1 rounded">{conditions.find(c => c.id === currentCondition)?.name}.pdf</code></p>
+                <p>Slides for this condition will be added soon. Please check back later or select a different condition.</p>
               </div>
+            </div>
+          )}
+          {isLoading && (
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-4xl mx-auto">
+              <p className="text-sm text-blue-800 font-medium">⏳ Loading slides for {conditions.find(c => c.id === currentCondition)?.name}...</p>
             </div>
           )}
         </div>
@@ -185,11 +189,6 @@ export default function AdhdEducation() {
           ))}
         </div>
 
-        {validImages.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Loading slides...</p>
-          </div>
-        )}
 
         {/* Fullscreen Slideshow Modal */}
         {isFullscreen && currentSlide !== null && (

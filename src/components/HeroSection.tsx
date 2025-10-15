@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Award, Heart, Users } from "lucide-react";
-import happyFamilyImage from "@/assets/happy-family.jpg";
 
 const HeroSection = () => {
   return (
@@ -25,8 +24,8 @@ const HeroSection = () => {
             {/* Main headline */}
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Caring for Cincinnati Families{" "}
-                <span className="text-primary">Since 1989</span>
+                Expert Psychiatry Care 
+                <span className="text-primary"> With Compassion</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Over 35 years of successful, caring treatment in Cincinnati and Fort Wright. 
@@ -86,12 +85,11 @@ const HeroSection = () => {
 
           {/* Right column - Family Image */}
           <div className="relative flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-large">
-              <img 
-                src={happyFamilyImage} 
-                alt="Happy loving family" 
-                className="w-full h-auto object-cover"
-              />
+            <div className="rounded-2xl overflow-hidden shadow-large bg-gradient-to-br from-primary/20 to-secondary/20 p-16 flex items-center justify-center min-h-[400px]">
+              <div className="text-center">
+                <Heart className="h-32 w-32 mx-auto mb-4 text-primary/50" />
+                <p className="text-muted-foreground text-lg">Caring for Cincinnati Families Since 1989</p>
+              </div>
             </div>
           </div>
         </div>

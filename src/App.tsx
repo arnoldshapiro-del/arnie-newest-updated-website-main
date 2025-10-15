@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Disorders from "./pages/Disorders";
 import Contact from "./pages/Contact";
 import Forms from "./pages/Forms";
+import PatientPortal from "./pages/PatientPortal";
 import Screening from "./pages/Screening";
 import AdhdEducation from "./pages/AdhdEducation";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/disorders" element={<Disorders />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/forms" element={<Forms />} />
+          <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/screening" element={<Screening />} />
           <Route path="/slideshows" element={<AdhdEducation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
