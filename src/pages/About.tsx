@@ -31,15 +31,19 @@ const About = () => {
       <div className="container max-w-6xl mx-auto px-4 py-16">
         {/* Doctor Profile Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div>
-            <img 
-              src={doctorProfile} 
-              alt="Dr. Arnold G. Shapiro" 
-              className="w-full h-96 object-cover rounded-lg shadow-lg"
+          <div className="flex items-start justify-center">
+            <img
+              src={doctorProfile}
+              alt="Dr. Arnold G. Shapiro"
+              className="w-full max-w-md h-auto rounded-lg shadow-lg"
             />
           </div>
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold">Meet Arnold G. Shapiro MD</h2>
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Dr. Arnold G. Shapiro</h2>
+              <p className="text-xl text-primary font-semibold mb-4">Board Certified Psychiatrist</p>
+            </div>
+            <h3 className="text-2xl font-bold">Meet Arnold G. Shapiro MD</h3>
             <p className="text-muted-foreground leading-relaxed">
               Dr. Arnold G. Shapiro is a board-certified psychiatrist with extensive experience 
               in treating a wide range of mental health conditions. He is committed to providing 

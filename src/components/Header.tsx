@@ -96,12 +96,6 @@ const Header = () => {
             >
               Forms
             </Link>
-            <Link 
-              to="/patient-portal" 
-              className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/patient-portal' ? 'text-primary border-b-2 border-primary' : ''}`}
-            >
-              Patient Portal
-            </Link>
             <Button 
               variant="default" 
               size="lg"
@@ -180,13 +174,6 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Forms
-              </Link>
-              <Link 
-                to="/patient-portal" 
-                className={`text-foreground hover:text-primary transition-colors font-medium ${pathname === '/patient-portal' ? 'text-primary font-bold' : ''}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Patient Portal
               </Link>
               <Button 
                 variant="default" 

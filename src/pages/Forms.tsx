@@ -294,63 +294,36 @@ const Forms = () => {
           </div>
         </div>
 
-        {/* Privacy & Security */}
-        <Card className="bg-muted/50">
-          <CardContent className="p-8">
-            <div className="flex items-start gap-4">
-              <Shield className="h-8 w-8 text-primary flex-shrink-0" />
-              <div>
-                <h3 className="text-xl font-bold mb-4">Your Privacy & Security</h3>
-                <div className="grid md:grid-cols-2 gap-6 text-sm">
-                  <div>
-                    <h4 className="font-semibold mb-2">HIPAA Compliant</h4>
-                    <p className="text-muted-foreground">
-                      All forms and personal information are protected under HIPAA regulations. 
-                      Your data is encrypted and stored securely.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Confidential Information</h4>
-                    <p className="text-muted-foreground">
-                      Information shared on these forms is confidential and will only be 
-                      used for your treatment and care coordination.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Secure Transmission</h4>
-                    <p className="text-muted-foreground">
-                      Online form submissions use bank-level encryption to protect 
-                      your sensitive information during transmission.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Limited Access</h4>
-                    <p className="text-muted-foreground">
-                      Only authorized healthcare providers involved in your care 
-                      have access to your completed forms and medical information.
-                    </p>
-                  </div>
+        {/* Contact for Help */}
+        <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
+          <CardContent className="p-10">
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Contact for Help */}
-        <Card className="mt-12">
-          <CardContent className="p-8 text-center">
-            <h3 className="text-xl font-bold mb-4">Need Help with Forms?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              If you have questions about completing any forms or need assistance, 
-              our staff is here to help. Don't let paperwork prevent you from getting care.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button>
-                Call (513) 794-8777 or (859) 341-7453
-              </Button>
-              <Button variant="outline" disabled>
-                Email Not Monitored - Please Call
-              </Button>
+              <h3 className="text-3xl font-bold">Need Help with Forms?</h3>
+              <p className="text-lg text-muted-foreground">
+                If you have questions about completing any forms or need assistance,
+                our staff is here to help. Don't let paperwork prevent you from getting care.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                <Button size="lg" className="text-lg px-8">
+                  <Phone className="h-5 w-5 mr-2" />
+                  Call (513) 794-8777 or (859) 341-7453
+                </Button>
+                <Button size="lg" variant="outline" disabled className="text-lg px-8">
+                  <Mail className="h-5 w-5 mr-2" />
+                  Email Not Monitored - Please Call
+                </Button>
+              </div>
+              <div className="pt-6 border-t border-border mt-6">
+                <p className="text-sm text-muted-foreground">
+                  <strong>Privacy Protected:</strong> All forms and personal information are HIPAA compliant,
+                  encrypted, and kept strictly confidential.
+                </p>
+              </div>
             </div>
           </CardContent>
         </Card>
