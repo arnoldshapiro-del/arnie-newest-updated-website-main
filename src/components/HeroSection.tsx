@@ -25,8 +25,8 @@ const HeroSection = () => {
             {/* Main headline */}
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Expert Psychiatry Care 
-                <span className="text-primary"> With Compassion</span>
+                Caring for Cincinnati Families{" "}
+                <span className="text-primary">Since 1989</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Over 35 years of successful, caring treatment in Cincinnati and Fort Wright. 
